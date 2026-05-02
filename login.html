@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="icons/bootstrap-icons.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500&display=swap"
+    rel="stylesheet" />
+  <title>Login — LAB 112</title>
+  <style>
+    :root {
+      /* New Premium Palette */
+      --galaxy: #081F5C;
+      --galaxy-rgb: 8, 31, 92;
+      --planetary: #334EAC;
+      --planetary-rgb: 51, 78, 172;
+      --universe: #7096D1;
+      --universe-rgb: 112, 150, 209;
+      --venus: #BAD6EB;
+      --venus-rgb: 186, 214, 235;
+      --sky: #D0E3FF;
+      --sky-rgb: 208, 227, 255;
+      --milky-way: #FFF9F0;
+      --meteor: #F7F2EB;
+
+      --navy: var(--galaxy);
+      --navy-mid: var(--planetary);
+      --navy-light: var(--universe);
+      --amber: var(--sky);
+      --amber-light: var(--milky-way);
+      --cream: var(--milky-way);
+      --cream-dim: var(--meteor);
+      --teal: var(--venus);
+      --teal-light: var(--universe);
+      --white: #ffffff;
+      --text-dim: var(--venus);
+
+      --card-bg: rgba(var(--planetary-rgb), 0.3);
+      --border: rgba(var(--sky-rgb), 0.2);
+
+      --font-display: 'Syne', sans-serif;
+      --font-mono: 'Space Mono', monospace;
+      --font-body: 'Inter', sans-serif;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: var(--navy);
+      color: var(--cream);
+      font-family: var(--font-body);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 20% 30%, rgba(13, 148, 136, 0.15) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 80% at 80% 70%, rgba(240, 165, 0, 0.1) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(240, 165, 0, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(240, 165, 0, 0.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+    }
+
+    .login-wrap {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 400px;
+    }
+
+    /* LOGO */
+    .login-logo {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .logo-mark {
+      font-family: var(--font-mono);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--amber);
+      letter-spacing: 3px;
+    }
+
+    .logo-mark span {
+      color: var(--cream);
+      font-weight: 400;
+    }
+
+    .logo-sub {
+      font-size: 0.78rem;
+      color: var(--text-dim);
+      margin-top: 0.3rem;
+      letter-spacing: 0.5px;
+    }
+
+    /* CARD */
+    .login-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2rem;
+      backdrop-filter: blur(20px);
+      box-shadow: 0 24px 64px rgba(0, 0, 0, 0.5);
+    }
+
+    /* COMING SOON BANNER */
+    .coming-soon-banner {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      background: rgba(240, 165, 0, 0.07);
+      border: 1px solid rgba(240, 165, 0, 0.25);
+      border-left: 3px solid var(--amber);
+      border-radius: 0 8px 8px 0;
+      padding: 1rem 1.1rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .banner-icon {
+      font-size: 1.1rem;
+      color: var(--amber);
+      flex-shrink: 0;
+      margin-top: 0.1rem;
+    }
+
+    .banner-title {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--amber);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 0.3rem;
+    }
+
+    .banner-text {
+      font-size: 0.82rem;
+      color: var(--text-dim);
+      line-height: 1.6;
+    }
+
+    .banner-text strong {
+      color: var(--cream);
+    }
+
+    /* TERMINAL BLOCK */
+    .terminal {
+      background: rgba(0, 0, 0, 0.4);
+      border: 1px solid rgba(240, 165, 0, 0.1);
+      border-radius: 8px;
+      padding: 1rem 1.1rem;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--text-dim);
+      line-height: 1.9;
+      margin-bottom: 1.75rem;
+    }
+
+    .terminal-line::before {
+      content: '> ';
+      color: var(--teal-light);
+    }
+
+    .terminal-line.amber::before {
+      color: var(--amber);
+    }
+
+    .terminal-line.dim {
+      color: #4a5568;
+    }
+
+    .cursor {
+      display: inline-block;
+      width: 8px;
+      height: 1em;
+      background: var(--teal-light);
+      vertical-align: text-bottom;
+      animation: blink 1s step-end infinite;
+    }
+
+    @keyframes blink {
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0;
+      }
+    }
+
+    /* FORM — greyed out to show it's not active */
+    .form-group {
+      margin-bottom: 1.1rem;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #4a5568;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-bottom: 0.4rem;
+      font-family: var(--font-mono);
+    }
+
+    .form-input {
+      width: 100%;
+      background: rgba(10, 22, 40, 0.3);
+      border: 1px solid rgba(240, 165, 0, 0.08);
+      border-radius: 6px;
+      padding: 0.7rem 1rem;
+      color: #4a5568;
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      outline: none;
+      cursor: not-allowed;
+    }
+
+    .form-input::placeholder {
+      color: #2d3748;
+    }
+
+    .btn-login {
+      width: 100%;
+      background: rgba(240, 165, 0, 0.1);
+      color: #4a5568;
+      border: 1px solid rgba(240, 165, 0, 0.1);
+      border-radius: 6px;
+      padding: 0.85rem;
+      font-family: var(--font-display);
+      font-size: 0.95rem;
+      font-weight: 800;
+      cursor: not-allowed;
+      letter-spacing: 0.5px;
+      margin-top: 0.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+
+    .divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 1.5rem 0;
+    }
+
+    /* FEATURES PREVIEW */
+    .features-title {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      color: var(--text-dim);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 0.85rem;
+    }
+
+    .feature-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      font-size: 0.78rem;
+      color: var(--text-dim);
+      line-height: 1.5;
+      padding: 0.35rem 0;
+      border-bottom: 1px solid rgba(240, 165, 0, 0.06);
+    }
+
+    .feature-item:last-child {
+      border-bottom: none;
+    }
+
+    .feature-item i {
+      color: var(--teal-light);
+      font-size: 0.85rem;
+      margin-top: 0.1rem;
+      flex-shrink: 0;
+    }
+
+    /* FOOTER */
+    .login-footer {
+      text-align: center;
+      margin-top: 1.5rem;
+      font-size: 0.78rem;
+      color: var(--text-dim);
+    }
+
+    .login-footer a {
+      color: var(--amber);
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="login-wrap">
+
+    <!-- LOGO -->
+    <div class="login-logo">
+      <div class="logo-mark">LAB<span>112</span></div>
+      <div class="logo-sub">UICT · Professional Certificate in Software Engineering</div>
+    </div>
+
+    <div class="login-card">
+
+      <!-- COMING SOON BANNER -->
+      <div class="coming-soon-banner">
+        <i class="bi bi-cpu banner-icon"></i>
+        <div class="banner-content">
+          <div class="banner-title">// Feature in development</div>
+          <div class="banner-text">
+            Student authentication is <strong>currently being built</strong>.
+            A full backend with secure login and personalised student accounts is coming soon.
+          </div>
+        </div>
+      </div>
+
+      <!-- TERMINAL BLOCK -->
+      <div class="terminal">
+        <div class="terminal-line">status: AUTH_MODULE</div>
+        <div class="terminal-line amber">state: UNDER_CONSTRUCTION</div>
+        <div class="terminal-line">backend: NOT_CONNECTED</div>
+        <div class="terminal-line">database: PENDING_SETUP</div>
+        <div class="terminal-line dim">// connecting to db... <span class="cursor"></span></div>
+      </div>
+
+      <!-- GREYED OUT FORM -->
+      <div class="form-group">
+        <label class="form-label">Student ID</label>
+        <input type="text" class="form-input" placeholder="e.g. UICT2025001" disabled />
+      </div>
+      <div class="form-group">
+        <label class="form-label">PIN</label>
+        <input type="password" class="form-input" placeholder="••••••••" disabled />
+      </div>
+      <div class="btn-login">
+        <i class="bi bi-lock"></i> Sign In — Coming Soon
+      </div>
+
+      <hr class="divider" />
+
+      <!-- FEATURES PREVIEW -->
+      <div class="features-title">What login will unlock</div>
+      <div class="feature-item">
+        <i class="bi bi-person-badge"></i>
+        Personal student profile with registration number and course details
+      </div>
+      <div class="feature-item">
+        <i class="bi bi-journal-check"></i>
+        Track which coursework you have submitted and what is pending
+      </div>
+      <div class="feature-item">
+        <i class="bi bi-bell"></i>
+        Deadline reminders personalised to your student account
+      </div>
+      <div class="feature-item">
+        <i class="bi bi-cloud-upload"></i>
+        Lecturers can upload new PDFs and post announcements without touching code
+      </div>
+      <div class="feature-item">
+        <i class="bi bi-shield-lock"></i>
+        Secure access — only registered UICT PCSE students can sign in
+      </div>
+
+    </div>
+
+    <div class="login-footer">
+      <a href="HomePage.html"><i class="bi bi-arrow-left"></i> Back to Home</a>
+    </div>
+
+  </div>
+
+  <script>
+    if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(() => { });
+  </script>
+</body>
+
+</html>
