@@ -869,7 +869,7 @@
     <div class="content">
       <p class="page-eyebrow">Study Material</p>
       <h1 class="page-title">Course <span>Notes</span></h1>
-      <p class="page-sub">Clear, simple notes for every topic. Topics marked  are coming up in
+      <p class="page-sub">Clear, simple notes for every topic. Topics marked are coming up in
         class — read ahead and get a head start!</p>
 
       <div class="search-wrap">
@@ -902,7 +902,8 @@
                 <div class="rl-label">Real life example</div>
                 <p>Imagine a student register. Each student has a <strong>name</strong>, an <strong>age</strong>, and a
                   <strong>score</strong>. In a program, each of those would be a separate variable holding a different
-                  value.</p>
+                  value.
+                </p>
               </div>
               <p>In C# you must tell the program <strong>what type of data</strong> the variable will hold before using
                 it. This is called declaring a variable.</p>
@@ -940,9 +941,11 @@
                 class="badge badge-covered">Covered</span></div>
             <div class="note-body">
               <p>To display text or values on the screen in C#, we use <code>Console.WriteLine()</code> or
-                <code>Console.Write()</code>.</p>
+                <code>Console.Write()</code>.
+              </p>
               <p><strong>The difference:</strong> <code>WriteLine</code> prints the text and then moves to a new line.
-                <code>Write</code> prints the text and stays on the same line.</p>
+                <code>Write</code> prints the text and stays on the same line.
+              </p>
               <div class="code-block">
                 <pre><span class="comment">// WriteLine — moves to next line after printing</span>
 Console.<span class="method">WriteLine</span>(<span class="string">"Hello, World!"</span>);
@@ -1070,7 +1073,8 @@ Console.<span class="method">WriteLine</span>(<span class="string">"C:\\Users\\A
                 <div class="rl-label">Real life example</div>
                 <p>Instead of having <strong>seat1, seat2, seat3...</strong> in a classroom, you just have one
                   <strong>seats[]</strong> array that holds all of them. A shelf of books is an array — one shelf, many
-                  books, each at a specific position.</p>
+                  books, each at a specific position.
+                </p>
               </div>
               <div class="code-block">
                 <pre><span class="comment">// Declaring an array — dataType[] arrayName = new dataType[size];</span>
@@ -1090,7 +1094,8 @@ Console.<span class="method">WriteLine</span>(scores[<span class="number">2</spa
                 <div class="tip-label">Important — Index starts at 0!</div>
                 <p>The first item is always at position <code>0</code>, not <code>1</code>. So in an array of 3 items,
                   the positions are <code>0</code>, <code>1</code>, and <code>2</code>. Trying to access position
-                  <code>3</code> would cause an error.</p>
+                  <code>3</code> would cause an error.
+                </p>
               </div>
               <p>You can loop through an array using a <code>for</code> loop:</p>
               <div class="code-block">
@@ -1106,158 +1111,6 @@ Console.<span class="method">WriteLine</span>(scores[<span class="number">2</spa
 Bob
 Charlie</span></pre>
               </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- LOOPS -->
-        <div class="note-section" id="csharp-loops">
-          <div class="note-section-title">Loops</div>
-
-          <div class="note-card">
-            <div class="note-card-title">Repeating Actions <span class="badge badge-covered">Covered</span></div>
-            <div class="note-body">
-              <p>A <strong>loop</strong> allows you to repeat a block of code multiple times. This saves you from writing the same code over and over again.</p>
-              <div class="reallife-box">
-                <div class="rl-label">Real life example</div>
-                <p>Imagine a music playlist set to <strong>Repeat</strong>. It plays the songs (the code) until the playlist ends, and then starts again. It keeps looping until you hit stop (the condition becomes false).</p>
-              </div>
-              <p>There are four main types of loops in C#:</p>
-              
-              <div class="tip-box">
-                <div class="tip-label">1. The 'for' Loop</div>
-                <p>Use this when you know <strong>exactly how many times</strong> you want to loop. The <code>for</code> loop has three distinct parts that control its flow:</p>
-                <ul style="margin-top: 0.5rem; margin-left: 1.5rem; font-size: 0.9rem;">
-                  <li style="margin-bottom: 0.25rem;"><strong>Start <code>(int i = 1)</code>:</strong> This creates a counter variable. It only runs <em>once</em> at the very beginning.</li>
-                  <li style="margin-bottom: 0.25rem;"><strong>Stop <code>(i &lt;= 3)</code>:</strong> This is the condition. The loop keeps running as long as this is true. It checks this <em>before</em> every loop.</li>
-                  <li><strong>Step <code>(i++)</code>:</strong> This updates the counter (adds 1). It runs at the <em>end</em> of every loop.</li>
-                </ul>
-              </div>
-              <div class="code-block">
-                <pre><span class="comment">// 1. Start at 1 | 2. Check if &lt;= 3 | 4. Increase by 1</span>
-<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">3</span>; i++) 
-{
-    <span class="comment">// 3. Run this code</span>
-    Console.<span class="method">WriteLine</span>(<span class="string">"Count: "</span> + i);
-}</pre>
-              </div>
-              
-              <div class="tip-box">
-                <div class="tip-label">2. The 'while' Loop</div>
-                <p>Use this when you want to loop <strong>as long as a condition is true</strong>.</p>
-              </div>
-              <div class="code-block">
-                <pre><span class="type">int</span> health = <span class="number">3</span>;
-<span class="keyword">while</span> (health > <span class="number">0</span>) 
-{
-    Console.<span class="method">WriteLine</span>(<span class="string">"Still alive!"</span>);
-    health--; <span class="comment">// decreases health</span>
-}</pre>
-              </div>
-
-              <div class="tip-box">
-                <div class="tip-label">3. The 'do-while' Loop</div>
-                <p>Similar to <code>while</code>, but it <strong>always runs at least once</strong> before checking the condition.</p>
-              </div>
-              <div class="code-block">
-                <pre><span class="type">int</span> attempts = <span class="number">0</span>;
-<span class="keyword">do</span> 
-{
-    Console.<span class="method">WriteLine</span>(<span class="string">"Trying connection..."</span>);
-    attempts++;
-} <span class="keyword">while</span> (attempts &lt; <span class="number">1</span>);</pre>
-              </div>
-
-              <div class="tip-box">
-                <div class="tip-label">4. The 'foreach' Loop</div>
-                <p>Use this to easily loop through items in an <strong>array</strong> or a collection.</p>
-              </div>
-              <div class="code-block">
-                <pre><span class="type">string</span>[] cars = {<span class="string">"Volvo"</span>, <span class="string">"BMW"</span>, <span class="string">"Ford"</span>};
-<span class="keyword">foreach</span> (<span class="type">string</span> i <span class="keyword">in</span> cars) 
-{
-    Console.<span class="method">WriteLine</span>(i);
-}</pre>
-              </div>
-
-            </div>
-          </div>
-
-          <div class="note-card">
-            <div class="note-card-title">Advanced Loop Techniques <span class="badge badge-covered">Covered</span></div>
-            <div class="note-body">
-              
-              <div class="tip-box">
-                <div class="tip-label">Nested Loops (Loops inside Loops)</div>
-                <p>You can place a loop inside another loop. The "inner loop" will finish all of its iterations for <em>every single iteration</em> of the "outer loop".</p>
-              </div>
-              <div class="code-block">
-                <pre><span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">2</span>; i++) <span class="comment">// Outer loop (runs 2 times)</span>
-{
-    Console.<span class="method">WriteLine</span>(<span class="string">"Outer: "</span> + i);
-    <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">1</span>; j &lt;= <span class="number">3</span>; j++) <span class="comment">// Inner loop (runs 3 times per outer)</span>
-    {
-        Console.<span class="method">WriteLine</span>(<span class="string">"  Inner: "</span> + j);
-    }
-}
-<span class="comment">// Total inner runs = 2 x 3 = 6 times</span></pre>
-              </div>
-              <p style="margin-top: 0.5rem; font-size: 0.9rem; margin-bottom: 1.5rem;"><strong>How it works:</strong><br>
-              1. The outer loop starts with <code>i = 1</code>.<br>
-              2. It prints "Outer: 1".<br>
-              3. Then, the inner loop starts. It runs completely from <code>j = 1</code> to <code>j = 3</code>, printing "Inner: 1", "Inner: 2", and "Inner: 3".<br>
-              4. The inner loop finishes, and the outer loop moves to its second step (<code>i = 2</code>).<br>
-              5. The inner loop starts completely over again from 1 to 3. Think of it like hours (outer) and minutes (inner) on a clock.</p>
-
-              <div class="tip-box">
-                <div class="tip-label">Reversing a Loop</div>
-                <p>You don't always have to count up using <code>i++</code>. You can count backwards using <code>i--</code>. This is useful for displaying lists from the bottom up.</p>
-              </div>
-              <div class="code-block">
-                <pre><span class="comment">// Counting backwards from 5 down to 1</span>
-<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">5</span>; i &gt; <span class="number">0</span>; i--) 
-{
-    Console.<span class="method">WriteLine</span>(i);
-}
-<span class="comment">// Output: 5, 4, 3, 2, 1</span></pre>
-              </div>
-              <p style="margin-top: 0.5rem; font-size: 0.9rem; margin-bottom: 1.5rem;"><strong>How it works:</strong><br>
-              1. <strong>Start:</strong> We start with <code>i = 5</code> instead of 0.<br>
-              2. <strong>Stop:</strong> The condition is <code>i &gt; 0</code>. As long as the number is greater than zero, the loop keeps running.<br>
-              3. <strong>Step:</strong> Instead of <code>i++</code> (add 1), we use <code>i--</code> (subtract 1). It prints 5, subtracts 1 to become 4, prints 4, and so on until it hits 0 and stops.</p>
-
-              <div class="tip-box">
-                <div class="tip-label">Interactive Example: Storing Input in an Array</div>
-                <p>This is a classic program: Ask the user for 3 names, use a loop to store them in an array, and use another loop to print them back out.</p>
-              </div>
-              <div class="code-block">
-                <pre><span class="type">string</span>[] students = <span class="keyword">new</span> <span class="type">string</span>[<span class="number">3</span>];
-
-<span class="comment">// 1. Loop to get input and store it</span>
-<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; students.Length; i++) 
-{
-    Console.<span class="method">Write</span>(<span class="string">$"Enter student {i+1} name: "</span>);
-    students[i] = Console.<span class="method">ReadLine</span>();
-}
-
-Console.<span class="method">WriteLine</span>(<span class="string">"\n--- Student List ---"</span>);
-
-<span class="comment">// 2. Loop to display the stored data</span>
-<span class="keyword">foreach</span> (<span class="type">string</span> name <span class="keyword">in</span> students) 
-{
-    Console.<span class="method">WriteLine</span>(<span class="string">"Student: "</span> + name);
-}</pre>
-              </div>
-              <p style="margin-top: 0.5rem; font-size: 0.9rem; margin-bottom: 1.5rem;"><strong>How it works:</strong><br>
-              <strong>Loop 1 (Input):</strong> We use a <code>for</code> loop to ask the user for a name 3 times. We use <code>students.Length</code> to ensure we fill the array perfectly. <code>students[i]</code> stores each name into slot 0, then slot 1, then slot 2.<br>
-              <strong>Loop 2 (Output):</strong> We use a <code>foreach</code> loop. It automatically grabs each string out of the <code>students</code> array one by one, temporarily calls it <code>name</code>, and prints it out.</p>
-
-              <div class="reallife-box">
-                <div class="rl-label">Reading Complex Loops</div>
-                <p><strong>Q: How do I trace a loop without getting confused?</strong><br>
-                <strong>A:</strong> Always read a loop like a story. Look at the starting point (<code>int i=0</code>), look at the stopping condition (<code>i &lt; 5</code>), and look at the step (<code>i++</code>). Then, ask yourself: <em>"What happens the very first time? What happens the second time? When does it finally break?"</em> Tracking variables on a piece of paper (a "trace table") makes complex loops easy to understand.</p>
-              </div>
-
             </div>
           </div>
         </div>
@@ -1320,7 +1173,8 @@ Console.<span class="method">WriteLine</span>(result); <span class="comment">// 
                 <div class="rl-label">Real life example</div>
                 <p>A <strong>class</strong> is like an architect's house plan. The plan itself is not a house — it's
                   just a blueprint. When you actually build a house using that plan, that built house is the
-                  <strong>object</strong>. You can build many houses (objects) from one plan (class).</p>
+                  <strong>object</strong>. You can build many houses (objects) from one plan (class).
+                </p>
               </div>
               <div class="code-block">
                 <pre><span class="comment">// Defining a class</span>
@@ -1346,7 +1200,8 @@ student1.<span class="method">Introduce</span>();
               </div>
               <p>The <strong>variables inside a class</strong> (like Name and Age) are called <em>fields</em> or
                 <em>properties</em>. The <strong>methods inside a class</strong> describe what objects of that class can
-                do.</p>
+                do.
+              </p>
             </div>
           </div>
         </div>
@@ -1683,7 +1538,196 @@ a.<span class="method">Speak</span>(); <span class="comment">// Output: Woof!</s
 b.<span class="method">Speak</span>(); <span class="comment">// Output: Meow!</span></pre>
               </div>
               <p>The keyword <code>virtual</code> in the parent says "this method can be overridden." The keyword
-                <code>override</code> in the child says "I am replacing this method with my own version."</p>
+                <code>override</code> in the child says "I am replacing this method with my own version."
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- OVERLOADING VS OVERRIDING -->
+        <div class="note-section" id="csharp-overloading">
+          <div class="note-section-title">Method Overloading &amp; Overriding</div>
+
+          <!-- OVERLOADING CARD -->
+          <div class="note-card">
+            <div class="note-card-title">Method Overloading <span class="badge badge-ahead">Read Ahead</span></div>
+            <div class="note-body">
+              <p><strong>Overloading</strong> occurs when multiple methods in the <em>same class</em> share the <em>same
+                  name</em>, but have <em>different parameters</em> (either a different number of parameters or
+                different data types).</p>
+              <div class="reallife-box">
+                <div class="rl-label">Real life example</div>
+                <p>Think of the word <strong>"Draw"</strong>. You can "Draw" (a picture with a pencil), or you can
+                  "Draw" (a sword from its sheath). It's the exact same word, but because you gave it different "inputs"
+                  (pencil vs sword), it does completely different things.</p>
+              </div>
+              <p>Method overloading is an example of <strong>Compile-Time Polymorphism</strong> because the compiler
+                decides which method to run based on the arguments you pass when writing the code.</p>
+              <div class="code-block">
+                <pre><span class="keyword">class</span> <span class="type">Calculator</span>
+{
+    <span class="comment">// 1. Method with two int parameters</span>
+    <span class="keyword">public int</span> <span class="method">Add</span>(<span class="type">int</span> a, <span class="type">int</span> b)
+    {
+        <span class="keyword">return</span> a + b;
+    }
+    
+    <span class="comment">// 2. Overloaded method: Same name 'Add', but three int parameters</span>
+    <span class="keyword">public int</span> <span class="method">Add</span>(<span class="type">int</span> a, <span class="type">int</span> b, <span class="type">int</span> c)
+    {
+        <span class="keyword">return</span> a + b + c;
+    }
+
+    <span class="comment">// 3. Overloaded method: Same name 'Add', but double parameters</span>
+    <span class="keyword">public double</span> <span class="method">Add</span>(<span class="type">double</span> a, <span class="type">double</span> b)
+    {
+        <span class="keyword">return</span> a + b;
+    }
+}
+
+<span class="keyword">class</span> <span class="type">Program</span> 
+{
+    <span class="keyword">static void</span> <span class="method">Main</span>() 
+    {
+        <span class="type">Calculator</span> calc = <span class="keyword">new</span> <span class="type">Calculator</span>();
+        Console.<span class="method">WriteLine</span>(calc.<span class="method">Add</span>(<span class="number">5</span>, <span class="number">10</span>));       <span class="comment">// Calls the first method (Outputs: 15)</span>
+        Console.<span class="method">WriteLine</span>(calc.<span class="method">Add</span>(<span class="number">5</span>, <span class="number">10</span>, <span class="number">20</span>));   <span class="comment">// Calls the second method (Outputs: 35)</span>
+        Console.<span class="method">WriteLine</span>(calc.<span class="method">Add</span>(<span class="number">2.5</span>, <span class="number">3.5</span>));    <span class="comment">// Calls the third method (Outputs: 6.0)</span>
+    }
+}</pre>
+              </div>
+            </div>
+          </div>
+
+          <!-- OVERRIDING CARD -->
+          <div class="note-card">
+            <div class="note-card-title">Method Overriding <span class="badge badge-ahead">Read Ahead</span></div>
+            <div class="note-body">
+              <p><strong>Overriding</strong> occurs when a <em>child class</em> provides a specific, customized
+                implementation for a method that is already provided by its <em>parent class</em>.</p>
+              <div class="reallife-box">
+                <div class="rl-label">Real life example</div>
+                <p>Imagine a general <strong>Vehicle</strong> blueprint that says all vehicles must
+                  <strong>"StartEngine"</strong>. A car might start its engine with a key, while a modern sports car
+                  might start with a push-button. The sports car takes the general "StartEngine" command and overrides
+                  it with its own custom way of doing things.
+                </p>
+              </div>
+              <p>In C#, for a method to be overridden, the parent's method must be marked with the <code>virtual</code>
+                keyword, and the child's method must use the <code>override</code> keyword. This is an example of
+                <strong>Run-Time Polymorphism</strong>.
+              </p>
+              <div class="code-block">
+                <pre><span class="keyword">class</span> <span class="type">Employee</span>
+{
+    <span class="comment">// The 'virtual' keyword allows children to override this</span>
+    <span class="keyword">public virtual void</span> <span class="method">Work</span>()
+    {
+        Console.<span class="method">WriteLine</span>(<span class="string">"The employee is doing generic work."</span>);
+    }
+}
+
+<span class="keyword">class</span> <span class="type">Developer</span> : <span class="type">Employee</span>
+{
+    <span class="comment">// The 'override' keyword replaces the parent's method</span>
+    <span class="keyword">public override void</span> <span class="method">Work</span>()
+    {
+        Console.<span class="method">WriteLine</span>(<span class="string">"The developer is writing C# code."</span>);
+    }
+}
+
+<span class="keyword">class</span> <span class="type">Manager</span> : <span class="type">Employee</span>
+{
+    <span class="keyword">public override void</span> <span class="method">Work</span>()
+    {
+        Console.<span class="method">WriteLine</span>(<span class="string">"The manager is planning a project."</span>);
+    }
+}
+
+<span class="keyword">class</span> <span class="type">Program</span> 
+{
+    <span class="keyword">static void</span> <span class="method">Main</span>() 
+    {
+        <span class="type">Employee</span> emp = <span class="keyword">new</span> <span class="type">Employee</span>();
+        emp.<span class="method">Work</span>(); <span class="comment">// Outputs: The employee is doing generic work.</span>
+
+        <span class="type">Developer</span> dev = <span class="keyword">new</span> <span class="type">Developer</span>();
+        dev.<span class="method">Work</span>(); <span class="comment">// Outputs: The developer is writing C# code.</span>
+    }
+}</pre>
+              </div>
+            </div>
+          </div>
+
+          <!-- COMPARISON CARD -->
+          <div class="note-card">
+            <div class="note-card-title">Comparing Overloading vs Overriding <span
+                class="badge badge-ahead">Summary</span></div>
+            <div class="note-body">
+              <div class="compare-wrap">
+                <div class="compare-block">
+                  <div class="compare-label good">Method Overloading</div>
+                  <ul
+                    style="margin-top: 0.75rem; margin-left: 1rem; font-size: 0.85rem; color: var(--text-dim); line-height: 1.6;">
+                    <li>Occurs within the <strong>same class</strong>.</li>
+                    <li>Methods must have the <strong>same name</strong> but <strong>different parameters</strong>.</li>
+                    <li>Used to increase the readability of the program (doing the same logic with different data
+                      types).</li>
+                    <li>Known as <strong>Compile-Time</strong> Polymorphism.</li>
+                    <li>Does not require special keywords like <code>virtual</code> or <code>override</code>.</li>
+                  </ul>
+                </div>
+                <div class="compare-block">
+                  <div class="compare-label good" style="background: rgba(240, 165, 0, 0.15); color: var(--amber);">
+                    Method Overriding</div>
+                  <ul
+                    style="margin-top: 0.75rem; margin-left: 1rem; font-size: 0.85rem; color: var(--text-dim); line-height: 1.6;">
+                    <li>Occurs between <strong>parent and child classes</strong> (Inheritance).</li>
+                    <li>Methods must have the <strong>exact same name and parameters</strong>.</li>
+                    <li>Used to provide a specific, customized implementation for an inherited method.</li>
+                    <li>Known as <strong>Run-Time</strong> Polymorphism.</li>
+                    <li>Requires the <code>virtual</code> (parent) and <code>override</code> (child) keywords.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- STATIC KEYWORD -->
+        <div class="note-section" id="csharp-static">
+          <div class="note-section-title">The static Keyword</div>
+
+          <div class="note-card">
+            <div class="note-card-title">Belonging to the Class, Not the Object <span class="badge badge-ahead">Read
+                Ahead</span></div>
+            <div class="note-body">
+              <p>When a method or variable is marked as <code>static</code>, it belongs to the <strong>class
+                  itself</strong>, rather than any specific object created from that class.</p>
+              <div class="reallife-box">
+                <div class="rl-label">Real life example</div>
+                <p>If you have a <code>Student</code> class, the <code>Name</code> and <code>Age</code> variables belong
+                  to each individual student object. But a variable like <code>TotalStudentsEnrolled</code> should be
+                  shared across everyone. It belongs to the concept of the Student class, not one person. That's a
+                  static variable.</p>
+              </div>
+              <div class="code-block">
+                <pre><span class="keyword">class</span> <span class="type">MathUtils</span>
+{
+    <span class="comment">// Static method</span>
+    <span class="keyword">public static int</span> <span class="method">Square</span>(<span class="type">int</span> number)
+    {
+        <span class="keyword">return</span> number * number;
+    }
+}
+
+<span class="comment">// You don't need to create an object to use it!</span>
+<span class="comment">// MathUtils utils = new MathUtils(); -- Not needed!</span>
+<span class="type">int</span> result = MathUtils.<span class="method">Square</span>(<span class="number">5</span>);
+Console.<span class="method">WriteLine</span>(result); <span class="comment">// 25</span></pre>
+              </div>
+              <p>A static method cannot access non-static variables directly because it doesn't know which object's
+                variables to look at.</p>
             </div>
           </div>
         </div>
@@ -1983,20 +2027,29 @@ Console.<span class="method">WriteLine</span>(c.<span class="method">GetArea</sp
           <div class="note-card">
             <div class="note-card-title">JVM, JRE, and JDK <span class="badge badge-covered">Covered</span></div>
             <div class="note-body">
-              <p>Java's architecture is based on three main components: the <strong>JDK</strong>, <strong>JRE</strong>, and <strong>JVM</strong>. Together, they allow Java code to run on any device.</p>
+              <p>Java's architecture is based on three main components: the <strong>JDK</strong>, <strong>JRE</strong>,
+                and <strong>JVM</strong>. Together, they allow Java code to run on any device.</p>
               <div class="reallife-box">
                 <div class="rl-label">Real life example</div>
-                <p>Imagine a kitchen. The <strong>JDK</strong> is the full kitchen with tools (compilers) to create recipes. The <strong>JRE</strong> is the kitchen appliances (libraries) needed to cook. The <strong>JVM</strong> is the chef who reads the recipe and cooks the dish.</p>
+                <p>Imagine a kitchen. The <strong>JDK</strong> is the full kitchen with tools (compilers) to create
+                  recipes. The <strong>JRE</strong> is the kitchen appliances (libraries) needed to cook. The
+                  <strong>JVM</strong> is the chef who reads the recipe and cooks the dish.
+                </p>
               </div>
               <p>Here is what each stands for:</p>
               <p>
-                <code>JDK</code> (Java Development Kit) — Tools you need to <em>write</em> and <em>compile</em> Java code.<br />
-                <code>JRE</code> (Java Runtime Environment) — The environment required to <em>run</em> Java programs.<br />
+                <code>JDK</code> (Java Development Kit) — Tools you need to <em>write</em> and <em>compile</em> Java
+                code.<br />
+                <code>JRE</code> (Java Runtime Environment) — The environment required to <em>run</em> Java
+                programs.<br />
                 <code>JVM</code> (Java Virtual Machine) — The engine that executes the code line-by-line.
               </p>
               <div class="tip-box">
                 <div class="tip-label">Write Once, Run Anywhere</div>
-                <p>Because the JVM exists for Windows, Mac, and Linux, your Java code is compiled into <strong>bytecode</strong>. Any JVM can understand this bytecode, which makes Java platform-independent.</p>
+                <p>Because the JVM exists for Windows, Mac, and Linux, your Java code is compiled into
+                  <strong>bytecode</strong>. Any JVM can understand this bytecode, which makes Java
+                  platform-independent.
+                </p>
               </div>
             </div>
           </div>
@@ -2009,7 +2062,8 @@ Console.<span class="method">WriteLine</span>(c.<span class="method">GetArea</sp
           <div class="note-card">
             <div class="note-card-title">Data Types and Variables <span class="badge badge-covered">Covered</span></div>
             <div class="note-body">
-              <p>Like C#, Java is a <strong>strongly typed</strong> language. You must declare a variable's data type before assigning it a value.</p>
+              <p>Like C#, Java is a <strong>strongly typed</strong> language. You must declare a variable's data type
+                before assigning it a value.</p>
               <div class="code-block">
                 <pre><span class="comment">// Declaring variables in Java</span>
 <span class="type">int</span> age = <span class="number">20</span>;
@@ -2027,7 +2081,8 @@ Console.<span class="method">WriteLine</span>(c.<span class="method">GetArea</sp
               </p>
               <div class="tip-box">
                 <div class="tip-label">Printing to the Console</div>
-                <p>Instead of <code>Console.WriteLine()</code> like in C#, Java uses <code>System.out.println()</code> to display output.</p>
+                <p>Instead of <code>Console.WriteLine()</code> like in C#, Java uses <code>System.out.println()</code>
+                  to display output.</p>
               </div>
               <div class="code-block">
                 <pre>System.out.<span class="method">println</span>(<span class="string">"Hello from Java!"</span>);
@@ -2043,12 +2098,17 @@ Console.<span class="method">WriteLine</span>(c.<span class="method">GetArea</sp
           <div class="note-section-title">User Input</div>
 
           <div class="note-card">
-            <div class="note-card-title">Reading Data with Scanner <span class="badge badge-covered">Covered</span></div>
+            <div class="note-card-title">Reading Data with Scanner <span class="badge badge-covered">Covered</span>
+            </div>
             <div class="note-body">
-              <p>In Java, we use the <code>Scanner</code> class to read input from the user. It is part of the <code>java.util</code> package, so you must import it at the top of your file.</p>
+              <p>In Java, we use the <code>Scanner</code> class to read input from the user. It is part of the
+                <code>java.util</code> package, so you must import it at the top of your file.
+              </p>
               <div class="reallife-box">
                 <div class="rl-label">Real life example</div>
-                <p>Think of a <strong>Scanner</strong> at a supermarket checkout. It reads the barcode (input) and brings the information into the cash register system. In Java, <code>Scanner</code> reads what you type on the keyboard and brings it into your variables.</p>
+                <p>Think of a <strong>Scanner</strong> at a supermarket checkout. It reads the barcode (input) and
+                  brings the information into the cash register system. In Java, <code>Scanner</code> reads what you
+                  type on the keyboard and brings it into your variables.</p>
               </div>
               <div class="code-block">
                 <pre><span class="keyword">import</span> java.util.Scanner; <span class="comment">// 1. Import the Scanner class</span>
@@ -2085,140 +2145,21 @@ Console.<span class="method">WriteLine</span>(c.<span class="method">GetArea</sp
           <div class="note-card">
             <div class="note-card-title">Repeating Actions <span class="badge badge-covered">Covered</span></div>
             <div class="note-body">
-              <p>A <strong>loop</strong> executes a block of code multiple times. Using loops keeps your code clean and avoids redundancy.</p>
-              <div class="reallife-box">
-                <div class="rl-label">Real life example</div>
-                <p>Think of a washing machine's <strong>Spin Cycle</strong>. It doesn't just spin once; it spins continuously (loops) until the timer hits zero. The condition to stop is when the timer ends.</p>
-              </div>
-              <p>There are four common ways to loop in Java:</p>
-              
-              <div class="tip-box">
-                <div class="tip-label">1. The 'for' Loop</div>
-                <p>Use when you know <strong>exactly how many times</strong> you want the loop to run. The <code>for</code> loop has three distinct parts that control its flow:</p>
-                <ul style="margin-top: 0.5rem; margin-left: 1.5rem; font-size: 0.9rem;">
-                  <li style="margin-bottom: 0.25rem;"><strong>Start <code>(int i = 1)</code>:</strong> This creates a counter variable. It only runs <em>once</em> at the very beginning.</li>
-                  <li style="margin-bottom: 0.25rem;"><strong>Stop <code>(i &lt;= 3)</code>:</strong> This is the condition. The loop keeps running as long as this is true. It checks this <em>before</em> every loop.</li>
-                  <li><strong>Step <code>(i++)</code>:</strong> This updates the counter (adds 1). It runs at the <em>end</em> of every loop.</li>
-                </ul>
-              </div>
+              <p>Control flow structures allow your program to make decisions (<code>if-else</code>) or repeat actions (<code>for</code> and <code>while</code> loops).</p>
               <div class="code-block">
-                <pre><span class="comment">// 1. Start at 1 | 2. Check if &lt;= 3 | 4. Increase by 1</span>
-<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">3</span>; i++) {
-    <span class="comment">// 3. Run this code</span>
-    System.out.<span class="method">println</span>(<span class="string">"Count: "</span> + i);
-}</pre>
-              </div>
-              
-              <div class="tip-box">
-                <div class="tip-label">2. The 'while' Loop</div>
-                <p>Use when the loop should run <strong>as long as a condition is true</strong>.</p>
-              </div>
-              <div class="code-block">
-                <pre><span class="type">int</span> health = <span class="number">3</span>;
-<span class="keyword">while</span> (health > <span class="number">0</span>) {
-    System.out.<span class="method">println</span>(<span class="string">"Still alive!"</span>);
-    health--; <span class="comment">// decreases health</span>
-}</pre>
-              </div>
-
-              <div class="tip-box">
-                <div class="tip-label">3. The 'do-while' Loop</div>
-                <p>This loop will <strong>always run at least once</strong> before checking the condition.</p>
-              </div>
-              <div class="code-block">
-                <pre><span class="type">int</span> attempts = <span class="number">0</span>;
-<span class="keyword">do</span> {
-    System.out.<span class="method">println</span>(<span class="string">"Trying connection..."</span>);
-    attempts++;
-} <span class="keyword">while</span> (attempts &lt; <span class="number">1</span>);</pre>
-              </div>
-
-              <div class="tip-box">
-                <div class="tip-label">4. The 'for-each' Loop</div>
-                <p>Used exclusively to loop through elements in an <strong>array</strong>.</p>
-              </div>
-              <div class="code-block">
-                <pre><span class="type">String</span>[] cars = {<span class="string">"Volvo"</span>, <span class="string">"BMW"</span>, <span class="string">"Ford"</span>};
-<span class="keyword">for</span> (<span class="type">String</span> i : cars) {
-    System.out.<span class="method">println</span>(i);
-}</pre>
-              </div>
-
-            </div>
-          </div>
-
-          <div class="note-card">
-            <div class="note-card-title">Advanced Loop Techniques <span class="badge badge-covered">Covered</span></div>
-            <div class="note-body">
-              
-              <div class="tip-box">
-                <div class="tip-label">Nested Loops (Loops inside Loops)</div>
-                <p>You can place a loop inside another loop. The "inner loop" will execute all of its iterations for <em>every single iteration</em> of the "outer loop".</p>
-              </div>
-              <div class="code-block">
-                <pre><span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">2</span>; i++) { <span class="comment">// Outer loop (runs 2 times)</span>
-    System.out.<span class="method">println</span>(<span class="string">"Outer: "</span> + i);
-    
-    <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">1</span>; j &lt;= <span class="number">3</span>; j++) { <span class="comment">// Inner loop (runs 3 times per outer)</span>
-        System.out.<span class="method">println</span>(<span class="string">"  Inner: "</span> + j);
-    }
-}
-<span class="comment">// Total inner runs = 2 x 3 = 6 times</span></pre>
-              </div>
-              <p style="margin-top: 0.5rem; font-size: 0.9rem; margin-bottom: 1.5rem;"><strong>How it works:</strong><br>
-              1. The outer loop starts with <code>i = 1</code>.<br>
-              2. It prints "Outer: 1".<br>
-              3. Then, the inner loop starts. It runs completely from <code>j = 1</code> to <code>j = 3</code>, printing "Inner: 1", "Inner: 2", and "Inner: 3".<br>
-              4. The inner loop finishes, and the outer loop moves to its second step (<code>i = 2</code>).<br>
-              5. The inner loop starts completely over again from 1 to 3. Think of it like hours (outer) and minutes (inner) on a clock.</p>
-
-              <div class="tip-box">
-                <div class="tip-label">Reversing a Loop</div>
-                <p>You don't always have to count forwards using <code>i++</code>. You can count backwards using <code>i--</code>. This is extremely useful for displaying arrays in reverse.</p>
-              </div>
-              <div class="code-block">
-                <pre><span class="comment">// Counting backwards from 5 down to 1</span>
-<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">5</span>; i &gt; <span class="number">0</span>; i--) {
-    System.out.<span class="method">println</span>(i);
-}
-<span class="comment">// Output: 5, 4, 3, 2, 1</span></pre>
-              </div>
-              <p style="margin-top: 0.5rem; font-size: 0.9rem; margin-bottom: 1.5rem;"><strong>How it works:</strong><br>
-              1. <strong>Start:</strong> We start with <code>i = 5</code> instead of 0.<br>
-              2. <strong>Stop:</strong> The condition is <code>i &gt; 0</code>. As long as the number is greater than zero, the loop keeps running.<br>
-              3. <strong>Step:</strong> Instead of <code>i++</code> (add 1), we use <code>i--</code> (subtract 1). It prints 5, subtracts 1 to become 4, prints 4, and so on until it hits 0 and stops.</p>
-
-              <div class="tip-box">
-                <div class="tip-label">Interactive Example: Storing Input in an Array</div>
-                <p>Here is a classic program: We use a <code>Scanner</code> and a loop to ask the user for 3 names, store them in an array, and then use a second loop to print them out.</p>
-              </div>
-              <div class="code-block">
-                <pre><span class="type">Scanner</span> scanner = <span class="keyword">new</span> <span class="type">Scanner</span>(System.in);
-<span class="type">String</span>[] students = <span class="keyword">new</span> <span class="type">String</span>[<span class="number">3</span>];
-
-<span class="comment">// 1. Loop to get input and store it</span>
-<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; students.length; i++) {
-    System.out.<span class="method">print</span>(<span class="string">"Enter student "</span> + (i+1) + <span class="string">" name: "</span>);
-    students[i] = scanner.<span class="method">nextLine</span>();
+                <pre><span class="comment">// If-Else Statement</span>
+<span class="type">int</span> score = <span class="number">85</span>;
+<span class="keyword">if</span> (score >= <span class="number">50</span>) {
+    System.out.<span class="method">println</span>(<span class="string">"Passed"</span>);
+} <span class="keyword">else</span> {
+    System.out.<span class="method">println</span>(<span class="string">"Failed"</span>);
 }
 
-System.out.<span class="method">println</span>(<span class="string">"\n--- Student List ---"</span>);
-
-<span class="comment">// 2. Loop to display the stored data</span>
-<span class="keyword">for</span> (<span class="type">String</span> name : students) {
-    System.out.<span class="method">println</span>(<span class="string">"Student: "</span> + name);
+<span class="comment">// For Loop</span>
+<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) {
+    System.out.<span class="method">println</span>(<span class="string">"Iteration: "</span> + i);
 }</pre>
               </div>
-              <p style="margin-top: 0.5rem; font-size: 0.9rem; margin-bottom: 1.5rem;"><strong>How it works:</strong><br>
-              <strong>Loop 1 (Input):</strong> We use a <code>for</code> loop to ask the user for a name 3 times. We use <code>students.length</code> to ensure we fill the array perfectly. <code>students[i]</code> stores each name into slot 0, then slot 1, then slot 2.<br>
-              <strong>Loop 2 (Output):</strong> We use an enhanced <code>for-each</code> loop. It automatically grabs each string out of the <code>students</code> array one by one, temporarily calls it <code>name</code>, and prints it out.</p>
-
-              <div class="reallife-box">
-                <div class="rl-label">Reading Complex Loops</div>
-                <p><strong>Q: How do I trace and understand a complex loop?</strong><br>
-                <strong>A:</strong> Never try to guess what a loop does by just glancing at it! Read it like a story. Identify the starting value (<code>int i=0</code>), the stopping condition (<code>i &lt; 5</code>), and how it steps (<code>i++</code>). If the loop contains complex math or nested loops, draw a small "trace table" on a piece of paper and track the variables on every single pass until the loop breaks.</p>
-              </div>
-
             </div>
           </div>
         </div>
@@ -2230,10 +2171,13 @@ System.out.<span class="method">println</span>(<span class="string">"\n--- Stude
           <div class="note-card">
             <div class="note-card-title">Storing Multiple Values <span class="badge badge-covered">Covered</span></div>
             <div class="note-body">
-              <p>An <strong>array</strong> is a variable that can hold <em>multiple values of the same type</em>. In Java, arrays have a fixed size — once you create it, you cannot change how many items it holds.</p>
+              <p>An <strong>array</strong> is a variable that can hold <em>multiple values of the same type</em>. In
+                Java, arrays have a fixed size — once you create it, you cannot change how many items it holds.</p>
               <div class="reallife-box">
                 <div class="rl-label">Real life example</div>
-                <p>An array is like a <strong>pill box</strong> with fixed compartments for Monday, Tuesday, Wednesday, etc. There are exactly 7 slots. You can put a pill in each slot, but you cannot suddenly add an 8th slot.</p>
+                <p>An array is like a <strong>pill box</strong> with fixed compartments for Monday, Tuesday, Wednesday,
+                  etc. There are exactly 7 slots. You can put a pill in each slot, but you cannot suddenly add an 8th
+                  slot.</p>
               </div>
               <div class="code-block">
                 <pre><span class="comment">// 1. Declaring an array with a specific size</span>
@@ -2258,12 +2202,16 @@ System.out.<span class="method">println</span>(scores.length); <span class="comm
           <div class="note-section-title">Classes &amp; Objects</div>
 
           <div class="note-card">
-            <div class="note-card-title">The Blueprint and the Thing <span class="badge badge-covered">Covered</span></div>
+            <div class="note-card-title">The Blueprint and the Thing <span class="badge badge-covered">Covered</span>
+            </div>
             <div class="note-body">
-              <p>Everything in Java is associated with classes and objects. A <strong>class</strong> is a blueprint, and an <strong>object</strong> is an instance of it.</p>
+              <p>Everything in Java is associated with classes and objects. A <strong>class</strong> is a blueprint, and
+                an <strong>object</strong> is an instance of it.</p>
               <div class="reallife-box">
                 <div class="rl-label">Real life example</div>
-                <p>A <strong>class</strong> is like an architect's house plan. The plan itself is not a house. When you actually build a house using that plan, that built house is the <strong>object</strong>. You can build many houses (objects) from one plan (class).</p>
+                <p>A <strong>class</strong> is like an architect's house plan. The plan itself is not a house. When you
+                  actually build a house using that plan, that built house is the <strong>object</strong>. You can build
+                  many houses (objects) from one plan (class).</p>
               </div>
               <div class="code-block">
                 <pre><span class="keyword">class</span> <span class="type">Car</span> {
@@ -2282,36 +2230,6 @@ myCar.<span class="method">drive</span>(); <span class="comment">// Toyota is dr
           </div>
         </div>
 
-        <!-- CONSTRUCTORS -->
-        <div class="note-section" id="java-constructors">
-          <div class="note-section-title">Constructors</div>
-
-          <div class="note-card">
-            <div class="note-card-title">Setting Up an Object <span class="badge badge-covered">Covered</span></div>
-            <div class="note-body">
-              <p>A <strong>constructor</strong> in Java is a special method that is used to initialize objects. The constructor is called when an object of a class is created.</p>
-              <div class="reallife-box">
-                <div class="rl-label">Real life example</div>
-                <p>When you buy a new phone, it comes with a default set of apps, a set battery level, and factory settings. The process of setting it up the very first time you turn it on is like a constructor — it gives the object its initial state.</p>
-              </div>
-              <div class="code-block">
-                <pre><span class="keyword">class</span> <span class="type">Car</span> {
-    <span class="type">String</span> modelName;
-
-    <span class="comment">// Constructor - Must match the class name, no return type</span>
-    <span class="keyword">public</span> <span class="method">Car</span>(<span class="type">String</span> name) {
-        modelName = name;
-    }
-}
-
-<span class="type">Car</span> myCar = <span class="keyword">new</span> <span class="type">Car</span>(<span class="string">"Mustang"</span>); <span class="comment">// Constructor is called here</span>
-System.out.<span class="method">println</span>(myCar.modelName); <span class="comment">// Prints Mustang</span></pre>
-              </div>
-              <p>Note that constructors do not have a return type, not even <code>void</code>, and they must have the exact same name as the class.</p>
-            </div>
-          </div>
-        </div>
-
         <!-- INHERITANCE -->
         <div class="note-section" id="java-inheritance">
           <div class="note-section-title">Inheritance</div>
@@ -2319,10 +2237,13 @@ System.out.<span class="method">println</span>(myCar.modelName); <span class="co
           <div class="note-card">
             <div class="note-card-title">Passing Down Traits <span class="badge badge-covered">Covered</span></div>
             <div class="note-body">
-              <p><strong>Inheritance</strong> allows a new class to take the properties and methods of an existing class using the <code>extends</code> keyword. It promotes code reusability.</p>
+              <p><strong>Inheritance</strong> allows a new class to take the properties and methods of an existing class
+                using the <code>extends</code> keyword. It promotes code reusability.</p>
               <div class="reallife-box">
                 <div class="rl-label">Real life example</div>
-                <p>A <strong>Smartphone</strong> inherits from a general <strong>Phone</strong>. The general phone has a "call" feature. The smartphone automatically gets that "call" feature without rewriting it, and adds its own "browse internet" feature.</p>
+                <p>A <strong>Smartphone</strong> inherits from a general <strong>Phone</strong>. The general phone has a
+                  "call" feature. The smartphone automatically gets that "call" feature without rewriting it, and adds
+                  its own "browse internet" feature.</p>
               </div>
               <div class="code-block">
                 <pre><span class="comment">// Parent class</span>
@@ -2354,10 +2275,16 @@ myPhone.<span class="method">browse</span>(); <span class="comment">// SmartPhon
           <div class="note-card">
             <div class="note-card-title">Protecting Data <span class="badge badge-covered">Covered</span></div>
             <div class="note-body">
-              <p><strong>Encapsulation</strong> hides the internal state of an object and requires all interaction to be performed through an object's methods. We do this by making variables <code>private</code> and providing <code>public</code> <strong>getter</strong> and <strong>setter</strong> methods.</p>
+              <p><strong>Encapsulation</strong> hides the internal state of an object and requires all interaction to be
+                performed through an object's methods. We do this by making variables <code>private</code> and providing
+                <code>public</code> <strong>getter</strong> and <strong>setter</strong> methods.
+              </p>
               <div class="reallife-box">
                 <div class="rl-label">Real life example</div>
-                <p>A <strong>bank ATM</strong>. You cannot reach inside the machine to change your balance directly (the money is <code>private</code>). You must use the keypad options to deposit or withdraw (the <code>public</code> setters/getters) which safely update your balance.</p>
+                <p>A <strong>bank ATM</strong>. You cannot reach inside the machine to change your balance directly (the
+                  money is <code>private</code>). You must use the keypad options to deposit or withdraw (the
+                  <code>public</code> setters/getters) which safely update your balance.
+                </p>
               </div>
               <div class="code-block">
                 <pre><span class="keyword">class</span> <span class="type">Account</span> {
@@ -2392,10 +2319,14 @@ System.out.<span class="method">println</span>(acc.<span class="method">getBalan
           <div class="note-card">
             <div class="note-card-title">Many Forms <span class="badge badge-covered">Covered</span></div>
             <div class="note-body">
-              <p><strong>Polymorphism</strong> means "many forms". It occurs when we have many classes that are related to each other by inheritance. It allows us to perform a single action in different ways by overriding methods using <code>@Override</code>.</p>
+              <p><strong>Polymorphism</strong> means "many forms". It occurs when we have many classes that are related
+                to each other by inheritance. It allows us to perform a single action in different ways by overriding
+                methods using <code>@Override</code>.</p>
               <div class="reallife-box">
                 <div class="rl-label">Real life example</div>
-                <p>A person taking on <strong>many roles</strong>. At the mall, a person is a <em>Customer</em>. On a bus, the same person is a <em>Passenger</em>. At school, they are a <em>Student</em>. Same person, different behaviours based on the situation.</p>
+                <p>A person taking on <strong>many roles</strong>. At the mall, a person is a <em>Customer</em>. On a
+                  bus, the same person is a <em>Passenger</em>. At school, they are a <em>Student</em>. Same person,
+                  different behaviours based on the situation.</p>
               </div>
               <div class="code-block">
                 <pre><span class="keyword">class</span> <span class="type">Animal</span> {
@@ -2425,150 +2356,6 @@ myAnimal.<span class="method">sound</span>(); <span class="comment">// Outputs: 
           </div>
         </div>
 
-        <!-- OVERLOADING VS OVERRIDING -->
-        <div class="note-section" id="java-overloading">
-          <div class="note-section-title">Method Overloading &amp; Overriding</div>
-
-          <!-- OVERLOADING CARD -->
-          <div class="note-card">
-            <div class="note-card-title">Method Overloading <span class="badge badge-covered">Covered</span></div>
-            <div class="note-body">
-              <p><strong>Overloading</strong> happens when multiple methods inside the <em>same class</em> share the <em>exact same name</em> but have <em>different parameters</em> (either a different number of arguments or different types). This is an example of <strong>Compile-Time Polymorphism</strong>.</p>
-              <div class="reallife-box">
-                <div class="rl-label">Real life example</div>
-                <p>Think of a <strong>Vending Machine</strong> button. If you insert a <strong>Coin</strong> and press the button, it gives a soda. If you insert a <strong>Credit Card</strong> and press the button, it also gives a soda. The action "PressButton" is exactly the same, but because the input changed (Coin vs Card), it's handled differently inside the machine.</p>
-              </div>
-              <div class="code-block">
-                <pre><span class="keyword">class</span> <span class="type">Display</span> {
-    <span class="comment">// 1. Method with a String parameter</span>
-    <span class="keyword">public void</span> <span class="method">show</span>(<span class="type">String</span> text) {
-        System.out.<span class="method">println</span>(<span class="string">"Showing text: "</span> + text);
-    }
-    
-    <span class="comment">// 2. Overloaded method: Same name 'show', but takes an int</span>
-    <span class="keyword">public void</span> <span class="method">show</span>(<span class="type">int</span> number) {
-        System.out.<span class="method">println</span>(<span class="string">"Showing number: "</span> + number);
-    }
-
-    <span class="comment">// 3. Overloaded method: Same name, but takes two ints</span>
-    <span class="keyword">public void</span> <span class="method">show</span>(<span class="type">int</span> a, <span class="type">int</span> b) {
-        System.out.<span class="method">println</span>(<span class="string">"Showing two numbers: "</span> + a + <span class="string">" and "</span> + b);
-    }
-}
-
-<span class="keyword">class</span> <span class="type">Main</span> {
-    <span class="keyword">public static void</span> <span class="method">main</span>(<span class="type">String</span>[] args) {
-        <span class="type">Display</span> d = <span class="keyword">new</span> <span class="type">Display</span>();
-        d.<span class="method">show</span>(<span class="string">"Hello"</span>);       <span class="comment">// Calls the first method</span>
-        d.<span class="method">show</span>(<span class="number">100</span>);           <span class="comment">// Calls the second method</span>
-        d.<span class="method">show</span>(<span class="number">10</span>, <span class="number">20</span>);        <span class="comment">// Calls the third method</span>
-    }
-}</pre>
-              </div>
-            </div>
-          </div>
-
-          <!-- OVERRIDING CARD -->
-          <div class="note-card">
-            <div class="note-card-title">Method Overriding <span class="badge badge-covered">Covered</span></div>
-            <div class="note-body">
-              <p><strong>Overriding</strong> happens when a <em>child class</em> provides its own specific implementation for a method that is already provided by its <em>parent class</em>. This is an example of <strong>Run-Time Polymorphism</strong>.</p>
-              <div class="reallife-box">
-                <div class="rl-label">Real life example</div>
-                <p>A general <strong>Phone</strong> class might have a method called <code>unlock()</code> that uses a password. But a <strong>SmartPhone</strong> (which inherits from Phone) might replace that exact same <code>unlock()</code> method with one that uses Face ID instead. The SmartPhone <em>overrides</em> the parent's default behaviour.</p>
-              </div>
-              <p>In Java, all non-static methods are virtually overridable by default. We use the <code>@Override</code> annotation just before the child method to explicitly state that we are overriding a method.</p>
-              <div class="code-block">
-                <pre><span class="keyword">class</span> <span class="type">Bank</span> {
-    <span class="comment">// Parent method</span>
-    <span class="keyword">public double</span> <span class="method">getInterestRate</span>() {
-        <span class="keyword">return</span> <span class="number">0.0</span>; <span class="comment">// Default 0% interest</span>
-    }
-}
-
-<span class="keyword">class</span> <span class="type">StanbicBank</span> <span class="keyword">extends</span> <span class="type">Bank</span> {
-    <span class="keyword">@Override</span> <span class="comment">// We use this annotation to safely override</span>
-    <span class="keyword">public double</span> <span class="method">getInterestRate</span>() {
-        <span class="keyword">return</span> <span class="number">7.5</span>; <span class="comment">// Stanbic provides 7.5% interest</span>
-    }
-}
-
-<span class="keyword">class</span> <span class="type">CentenaryBank</span> <span class="keyword">extends</span> <span class="type">Bank</span> {
-    <span class="keyword">@Override</span>
-    <span class="keyword">public double</span> <span class="method">getInterestRate</span>() {
-        <span class="keyword">return</span> <span class="number">9.0</span>; <span class="comment">// Centenary provides 9.0% interest</span>
-    }
-}
-
-<span class="keyword">class</span> <span class="type">Main</span> {
-    <span class="keyword">public static void</span> <span class="method">main</span>(<span class="type">String</span>[] args) {
-        <span class="type">Bank</span> myBank = <span class="keyword">new</span> <span class="type">StanbicBank</span>();
-        System.out.<span class="method">println</span>(myBank.<span class="method">getInterestRate</span>()); <span class="comment">// Outputs: 7.5</span>
-    }
-}</pre>
-              </div>
-            </div>
-          </div>
-
-          <!-- COMPARISON CARD -->
-          <div class="note-card">
-            <div class="note-card-title">Comparing Overloading vs Overriding <span class="badge badge-covered">Summary</span></div>
-            <div class="note-body">
-              <div class="compare-wrap">
-                <div class="compare-block">
-                  <div class="compare-label good">Method Overloading</div>
-                  <ul style="margin-top: 0.75rem; margin-left: 1rem; font-size: 0.85rem; color: var(--text-dim); line-height: 1.6;">
-                    <li>Occurs within the <strong>same class</strong>.</li>
-                    <li>Methods must have the <strong>same name</strong> but <strong>different parameters</strong>.</li>
-                    <li>Return types can be different, but parameters <em>must</em> differ.</li>
-                    <li>Resolved during <strong>Compile-Time</strong>.</li>
-                    <li>Does not require inheritance.</li>
-                  </ul>
-                </div>
-                <div class="compare-block">
-                  <div class="compare-label good" style="background: rgba(240, 165, 0, 0.15); color: var(--amber);">Method Overriding</div>
-                  <ul style="margin-top: 0.75rem; margin-left: 1rem; font-size: 0.85rem; color: var(--text-dim); line-height: 1.6;">
-                    <li>Occurs between <strong>two classes</strong> (Child inherits Parent).</li>
-                    <li>Methods must have the <strong>exact same name and parameters</strong>.</li>
-                    <li>Return type must be the same (or a subtype).</li>
-                    <li>Resolved during <strong>Run-Time</strong>.</li>
-                    <li>Uses the <code>@Override</code> annotation.</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- STATIC KEYWORD -->
-        <div class="note-section" id="java-static">
-          <div class="note-section-title">The static Keyword</div>
-
-          <div class="note-card">
-            <div class="note-card-title">Belonging to the Class <span class="badge badge-covered">Covered</span></div>
-            <div class="note-body">
-              <p>The <code>static</code> keyword in Java means that the particular member belongs to the <strong>type itself</strong>, rather than to an instance of that type.</p>
-              <div class="reallife-box">
-                <div class="rl-label">Real life example</div>
-                <p>If every student in a school has their own ID, that's non-static. But if there's a total count of all students ever enrolled in the school, that belongs to the whole school, not one student. That would be a <code>static</code> variable.</p>
-              </div>
-              <div class="code-block">
-                <pre><span class="keyword">class</span> <span class="type">MathUtils</span> {
-    <span class="comment">// Static method</span>
-    <span class="keyword">public static int</span> <span class="method">square</span>(<span class="type">int</span> number) {
-        <span class="keyword">return</span> number * number;
-    }
-}
-
-<span class="comment">// Calling a static method without creating an object</span>
-<span class="type">int</span> result = MathUtils.<span class="method">square</span>(<span class="number">5</span>);
-System.out.<span class="method">println</span>(result); <span class="comment">// 25</span></pre>
-              </div>
-              <p>A common example of a static method in Java is the <code>public static void main(String[] args)</code> method. It is static because the JVM needs to call it before any objects are created.</p>
-            </div>
-          </div>
-        </div>
-
         <!-- ABSTRACTION -->
         <div class="note-section" id="java-abstraction">
           <div class="note-section-title">Abstraction </div>
@@ -2576,10 +2363,13 @@ System.out.<span class="method">println</span>(result); <span class="comment">//
           <div class="note-card">
             <div class="note-card-title">Hiding Complexity <span class="badge badge-covered">Covered</span></div>
             <div class="note-body">
-              <p><strong>Abstraction</strong> is the process of hiding certain details and showing only essential information to the user. We achieve this with <code>abstract</code> classes.</p>
+              <p><strong>Abstraction</strong> is the process of hiding certain details and showing only essential
+                information to the user. We achieve this with <code>abstract</code> classes.</p>
               <div class="reallife-box">
                 <div class="rl-label">Real life example</div>
-                <p>Sending an <strong>email</strong>. You just type the message, click "Send", and it delivers. You don't see the complex server routing, protocol handshakes, or data packaging happening in the background. That complexity is abstracted away.</p>
+                <p>Sending an <strong>email</strong>. You just type the message, click "Send", and it delivers. You
+                  don't see the complex server routing, protocol handshakes, or data packaging happening in the
+                  background. That complexity is abstracted away.</p>
               </div>
               <div class="code-block">
                 <pre><span class="comment">// Abstract class: restricted class that cannot be used to create objects</span>
@@ -2612,10 +2402,14 @@ System.out.<span class="method">println</span>(result); <span class="comment">//
           <div class="note-card">
             <div class="note-card-title">Complete Abstraction <span class="badge badge-covered">Covered</span></div>
             <div class="note-body">
-              <p>An <strong>interface</strong> is a completely "abstract class" that is used to group related methods with empty bodies. A class uses the <code>implements</code> keyword to inherit the interface.</p>
+              <p>An <strong>interface</strong> is a completely "abstract class" that is used to group related methods
+                with empty bodies. A class uses the <code>implements</code> keyword to inherit the interface.</p>
               <div class="reallife-box">
                 <div class="rl-label">Real life example</div>
-                <p>A <strong>USB port</strong> is an interface. It defines a standard connection shape. Any device (mouse, keyboard, flash drive) that wants to plug into your laptop <strong>must implement</strong> that exact USB shape. The laptop doesn't care what the device does, only that it perfectly matches the interface.</p>
+                <p>A <strong>USB port</strong> is an interface. It defines a standard connection shape. Any device
+                  (mouse, keyboard, flash drive) that wants to plug into your laptop <strong>must implement</strong>
+                  that exact USB shape. The laptop doesn't care what the device does, only that it perfectly matches the
+                  interface.</p>
               </div>
               <div class="code-block">
                 <pre><span class="keyword">interface</span> <span class="type">Animal</span> {
@@ -2637,62 +2431,6 @@ System.out.<span class="method">println</span>(result); <span class="comment">//
           </div>
         </div>
 
-        <!-- PACKAGES -->
-        <div class="note-section" id="java-packages">
-          <div class="note-section-title">Packages</div>
-
-          <div class="note-card">
-            <div class="note-card-title">Organizing Your Code <span class="badge badge-covered">Covered</span></div>
-            <div class="note-body">
-              <p>A <strong>package</strong> in Java is used to group related classes. Think of it as a folder in a file directory. We use packages to avoid name conflicts, and to write a better maintainable code.</p>
-              <div class="reallife-box">
-                <div class="rl-label">Real life example</div>
-                <p>Imagine your computer's hard drive. Instead of putting all your photos, documents, and videos into one giant folder, you group them into separate folders like <code>/Pictures</code>, <code>/Documents/Work</code>, and <code>/Videos/Vacation</code>. Packages do the exact same thing for Java classes.</p>
-              </div>
-              <p>Packages are divided into two categories:</p>
-              <ul style="margin-top: 0.5rem; margin-left: 1.5rem; font-size: 0.9rem; margin-bottom: 1rem;">
-                <li style="margin-bottom: 0.25rem;"><strong>Built-in Packages</strong> (packages from the Java API, like <code>java.util</code>, <code>java.io</code>, <code>java.sql</code>)</li>
-                <li><strong>User-defined Packages</strong> (create your own packages to organize your project)</li>
-              </ul>
-              
-              <div class="tip-box">
-                <div class="tip-label">Using Built-in Packages</div>
-                <p>To use a class or a package from the library, you need to use the <code>import</code> keyword.</p>
-              </div>
-              <div class="code-block">
-                <pre><span class="comment">// Import a single class</span>
-<span class="keyword">import</span> java.util.Scanner;
-
-<span class="comment">// Import the whole package (all classes in java.util)</span>
-<span class="keyword">import</span> java.util.*;
-
-<span class="keyword">class</span> <span class="type">Main</span> {
-    <span class="keyword">public static void</span> <span class="method">main</span>(<span class="type">String</span>[] args) {
-        <span class="type">Scanner</span> sc = <span class="keyword">new</span> <span class="type">Scanner</span>(System.in);
-        System.out.<span class="method">println</span>(<span class="string">"Ready!"</span>);
-    }
-}</pre>
-              </div>
-
-              <div class="tip-box">
-                <div class="tip-label">Creating Your Own Packages</div>
-                <p>To create a package, you use the <code>package</code> keyword at the very top of your Java file.</p>
-              </div>
-              <div class="code-block">
-                <pre><span class="comment">// At the top of your file 'MyClass.java'</span>
-<span class="keyword">package</span> mypack;
-
-<span class="keyword">class</span> <span class="type">MyClass</span> {
-    <span class="keyword">public static void</span> <span class="method">main</span>(<span class="type">String</span>[] args) {
-        System.out.<span class="method">println</span>(<span class="string">"This is my package!"</span>);
-    }
-}</pre>
-              </div>
-              <p>When saving the file, you should save it in a directory that matches the package name (e.g., inside a folder named <code>mypack</code>). To compile and run it, you would navigate to the root folder in the terminal and compile with <code>javac mypack/MyClass.java</code>, and then run it with <code>java mypack.MyClass</code>.</p>
-            </div>
-          </div>
-        </div>
-
         <!-- EXCEPTION HANDLING -->
         <div class="note-section" id="java-exceptions">
           <div class="note-section-title">Exception Handling </div>
@@ -2700,7 +2438,9 @@ System.out.<span class="method">println</span>(result); <span class="comment">//
           <div class="note-card">
             <div class="note-card-title">Try-Catch Blocks <span class="badge badge-covered">Covered</span></div>
             <div class="note-body">
-              <p>Exceptions are errors that occur while the program is running. We handle them using <code>try-catch</code> blocks to prevent the program from crashing.</p>
+              <p>Exceptions are errors that occur while the program is running. We handle them using
+                <code>try-catch</code> blocks to prevent the program from crashing.
+              </p>
               <div class="code-block">
                 <pre><span class="keyword">try</span> {
     <span class="type">int</span> result = <span class="number">10</span> / <span class="number">0</span>; <span class="comment">// This causes an error</span>
@@ -2719,9 +2459,12 @@ System.out.<span class="method">println</span>(result); <span class="comment">//
           <div class="note-section-title">I/O Streams </div>
 
           <div class="note-card">
-            <div class="note-card-title">Reading and Writing Files <span class="badge badge-covered">Covered</span></div>
+            <div class="note-card-title">Reading and Writing Files <span class="badge badge-covered">Covered</span>
+            </div>
             <div class="note-body">
-              <p>Java uses Streams to read from and write to files. A common approach for text files is using <code>Scanner</code> for reading and <code>FileWriter</code> for writing.</p>
+              <p>Java uses Streams to read from and write to files. A common approach for text files is using
+                <code>Scanner</code> for reading and <code>FileWriter</code> for writing.
+              </p>
               <div class="code-block">
                 <pre><span class="keyword">import</span> java.io.FileWriter;
 <span class="keyword">import</span> java.io.IOException;
@@ -2743,9 +2486,11 @@ System.out.<span class="method">println</span>(result); <span class="comment">//
           <div class="note-section-title">Database Connectivity </div>
 
           <div class="note-card">
-            <div class="note-card-title">Connecting to SQL with JDBC <span class="badge badge-covered">Covered</span></div>
+            <div class="note-card-title">Connecting to SQL with JDBC <span class="badge badge-covered">Covered</span>
+            </div>
             <div class="note-body">
-              <p>JDBC (Java Database Connectivity) allows Java applications to connect to relational databases like MySQL or PostgreSQL to execute queries and retrieve data.</p>
+              <p>JDBC (Java Database Connectivity) allows Java applications to connect to relational databases like
+                MySQL or PostgreSQL to execute queries and retrieve data.</p>
               <div class="code-block">
                 <pre><span class="keyword">import</span> java.sql.Connection;
 <span class="keyword">import</span> java.sql.DriverManager;
