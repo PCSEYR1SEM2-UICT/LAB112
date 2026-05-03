@@ -836,6 +836,8 @@
         <li><a href="#csharp-getset"><i class="bi bi-arrow-left-right"></i> Getters &amp; Setters </a></li>
         <li><a href="#csharp-void"><i class="bi bi-x-circle"></i> Void Keyword </a></li>
         <li><a href="#csharp-polymorphism"><i class="bi bi-layers"></i> Polymorphism </a></li>
+        <li><a href="#csharp-overloading"><i class="bi bi-distribute-vertical"></i> Overloading vs Overriding </a></li>
+        <li><a href="#csharp-static"><i class="bi bi-lightning"></i> Static Keyword </a></li>
         <li><a href="#csharp-abstraction"><i class="bi bi-eye-slash"></i> Abstraction </a></li>
         <li><a href="#csharp-interfaces"><i class="bi bi-plug"></i> Interfaces </a></li>
       </ul>
@@ -848,11 +850,15 @@
         <li><a href="#java-loops"><i class="bi bi-arrow-repeat"></i> Loops</a></li>
         <li><a href="#java-arrays"><i class="bi bi-grid-3x3"></i> Arrays</a></li>
         <li><a href="#java-oop"><i class="bi bi-boxes"></i> Classes &amp; Objects</a></li>
+        <li><a href="#java-constructors"><i class="bi bi-gear"></i> Constructors</a></li>
         <li><a href="#java-inheritance"><i class="bi bi-diagram-2"></i> Inheritance</a></li>
         <li><a href="#java-encapsulation"><i class="bi bi-lock"></i> Encapsulation </a></li>
         <li><a href="#java-polymorphism"><i class="bi bi-layers"></i> Polymorphism </a></li>
+        <li><a href="#java-overloading"><i class="bi bi-distribute-vertical"></i> Overloading vs Overriding </a></li>
+        <li><a href="#java-static"><i class="bi bi-lightning"></i> Static Keyword </a></li>
         <li><a href="#java-abstraction"><i class="bi bi-eye-slash"></i> Abstraction </a></li>
         <li><a href="#java-interfaces"><i class="bi bi-plug"></i> Interfaces </a></li>
+        <li><a href="#java-packages"><i class="bi bi-box-seam"></i> Packages </a></li>
         <li><a href="#java-exceptions"><i class="bi bi-exclamation-triangle"></i> Exceptions </a></li>
         <li><a href="#java-io"><i class="bi bi-file-earmark-text"></i> I/O Streams </a></li>
         <li><a href="#java-database"><i class="bi bi-database"></i> Database </a></li>
@@ -1682,6 +1688,84 @@ b.<span class="method">Speak</span>(); <span class="comment">// Output: Meow!</s
           </div>
         </div>
 
+        <!-- OVERLOADING VS OVERRIDING -->
+        <div class="note-section" id="csharp-overloading">
+          <div class="note-section-title">Method Overloading vs Overriding</div>
+
+          <div class="note-card">
+            <div class="note-card-title">Similar Names, Different Behaviours <span class="badge badge-ahead">Read Ahead</span></div>
+            <div class="note-body">
+              <p>In C#, methods can share names but behave differently. We use <strong>Overloading</strong> and <strong>Overriding</strong> to achieve this.</p>
+              
+              <div class="tip-box">
+                <div class="tip-label">Method Overloading</div>
+                <p><strong>Overloading</strong> happens when multiple methods in the <em>same class</em> share the <em>same name</em> but have <em>different parameters</em> (different type or number of arguments). It's a compile-time polymorphism.</p>
+              </div>
+              <div class="code-block">
+                <pre><span class="keyword">class</span> <span class="type">Calculator</span>
+{
+    <span class="comment">// Same method name 'Add', but different parameters</span>
+    <span class="keyword">public int</span> <span class="method">Add</span>(<span class="type">int</span> a, <span class="type">int</span> b) {
+        <span class="keyword">return</span> a + b;
+    }
+    
+    <span class="keyword">public double</span> <span class="method">Add</span>(<span class="type">double</span> a, <span class="type">double</span> b) {
+        <span class="keyword">return</span> a + b;
+    }
+}</pre>
+              </div>
+              
+              <div class="tip-box">
+                <div class="tip-label">Method Overriding</div>
+                <p><strong>Overriding</strong> happens when a <em>child class</em> provides its own implementation for a method that is already defined in its <em>parent class</em>. It requires the <code>virtual</code> keyword in the parent and <code>override</code> keyword in the child. It's a run-time polymorphism.</p>
+              </div>
+              <p>You can see an example of Overriding in the Polymorphism section above.</p>
+              <div class="compare-wrap">
+                <div class="compare-block">
+                  <div class="compare-label good">Overloading</div>
+                  <p style="font-size: 0.8rem; color: var(--text-dim); margin-top: 0.5rem;">Same class, same method name, different parameters.</p>
+                </div>
+                <div class="compare-block">
+                  <div class="compare-label good">Overriding</div>
+                  <p style="font-size: 0.8rem; color: var(--text-dim); margin-top: 0.5rem;">Different classes (parent/child), same method name, same parameters.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- STATIC KEYWORD -->
+        <div class="note-section" id="csharp-static">
+          <div class="note-section-title">The static Keyword</div>
+
+          <div class="note-card">
+            <div class="note-card-title">Belonging to the Class, Not the Object <span class="badge badge-ahead">Read Ahead</span></div>
+            <div class="note-body">
+              <p>When a method or variable is marked as <code>static</code>, it belongs to the <strong>class itself</strong>, rather than any specific object created from that class.</p>
+              <div class="reallife-box">
+                <div class="rl-label">Real life example</div>
+                <p>If you have a <code>Student</code> class, the <code>Name</code> and <code>Age</code> variables belong to each individual student object. But a variable like <code>TotalStudentsEnrolled</code> should be shared across everyone. It belongs to the concept of the Student class, not one person. That's a static variable.</p>
+              </div>
+              <div class="code-block">
+                <pre><span class="keyword">class</span> <span class="type">MathUtils</span>
+{
+    <span class="comment">// Static method</span>
+    <span class="keyword">public static int</span> <span class="method">Square</span>(<span class="type">int</span> number)
+    {
+        <span class="keyword">return</span> number * number;
+    }
+}
+
+<span class="comment">// You don't need to create an object to use it!</span>
+<span class="comment">// MathUtils utils = new MathUtils(); -- Not needed!</span>
+<span class="type">int</span> result = MathUtils.<span class="method">Square</span>(<span class="number">5</span>);
+Console.<span class="method">WriteLine</span>(result); <span class="comment">// 25</span></pre>
+              </div>
+              <p>A static method cannot access non-static variables directly because it doesn't know which object's variables to look at.</p>
+            </div>
+          </div>
+        </div>
+
         <!-- ABSTRACTION -->
         <div class="note-section" id="csharp-abstraction">
           <div class="note-section-title">Abstraction </div>
@@ -2112,6 +2196,36 @@ myCar.<span class="method">drive</span>(); <span class="comment">// Toyota is dr
           </div>
         </div>
 
+        <!-- CONSTRUCTORS -->
+        <div class="note-section" id="java-constructors">
+          <div class="note-section-title">Constructors</div>
+
+          <div class="note-card">
+            <div class="note-card-title">Setting Up an Object <span class="badge badge-covered">Covered</span></div>
+            <div class="note-body">
+              <p>A <strong>constructor</strong> in Java is a special method that is used to initialize objects. The constructor is called when an object of a class is created.</p>
+              <div class="reallife-box">
+                <div class="rl-label">Real life example</div>
+                <p>When you buy a new phone, it comes with a default set of apps, a set battery level, and factory settings. The process of setting it up the very first time you turn it on is like a constructor — it gives the object its initial state.</p>
+              </div>
+              <div class="code-block">
+                <pre><span class="keyword">class</span> <span class="type">Car</span> {
+    <span class="type">String</span> modelName;
+
+    <span class="comment">// Constructor - Must match the class name, no return type</span>
+    <span class="keyword">public</span> <span class="method">Car</span>(<span class="type">String</span> name) {
+        modelName = name;
+    }
+}
+
+<span class="type">Car</span> myCar = <span class="keyword">new</span> <span class="type">Car</span>(<span class="string">"Mustang"</span>); <span class="comment">// Constructor is called here</span>
+System.out.<span class="method">println</span>(myCar.modelName); <span class="comment">// Prints Mustang</span></pre>
+              </div>
+              <p>Note that constructors do not have a return type, not even <code>void</code>, and they must have the exact same name as the class.</p>
+            </div>
+          </div>
+        </div>
+
         <!-- INHERITANCE -->
         <div class="note-section" id="java-inheritance">
           <div class="note-section-title">Inheritance</div>
@@ -2225,6 +2339,65 @@ myAnimal.<span class="method">sound</span>(); <span class="comment">// Outputs: 
           </div>
         </div>
 
+        <!-- OVERLOADING VS OVERRIDING -->
+        <div class="note-section" id="java-overloading">
+          <div class="note-section-title">Method Overloading vs Overriding</div>
+
+          <div class="note-card">
+            <div class="note-card-title">Similar Names, Different Behaviours <span class="badge badge-covered">Covered</span></div>
+            <div class="note-body">
+              <p>Java supports both <strong>Overloading</strong> and <strong>Overriding</strong>. While C# uses the <code>virtual</code> and <code>override</code> keywords for overriding, Java methods are virtual by default.</p>
+              
+              <div class="tip-box">
+                <div class="tip-label">Method Overloading</div>
+                <p><strong>Overloading</strong> happens when multiple methods in the <em>same class</em> share the <em>same name</em> but have <em>different parameters</em>. It's compile-time polymorphism.</p>
+              </div>
+              <div class="code-block">
+                <pre><span class="keyword">class</span> <span class="type">Calculator</span> {
+    <span class="comment">// Overloaded methods</span>
+    <span class="keyword">public int</span> <span class="method">add</span>(<span class="type">int</span> a, <span class="type">int</span> b) { <span class="keyword">return</span> a + b; }
+    <span class="keyword">public double</span> <span class="method">add</span>(<span class="type">double</span> a, <span class="type">double</span> b) { <span class="keyword">return</span> a + b; }
+}</pre>
+              </div>
+              
+              <div class="tip-box">
+                <div class="tip-label">Method Overriding</div>
+                <p><strong>Overriding</strong> happens when a <em>child class</em> provides a specific implementation of a method that is already provided by its <em>parent class</em>. We use the <code>@Override</code> annotation to ensure we are correctly replacing the parent's method.</p>
+              </div>
+              <p>In Java, you don't need a <code>virtual</code> keyword in the parent class to override a method. You just declare it, and the child class can override it using <code>@Override</code>.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- STATIC KEYWORD -->
+        <div class="note-section" id="java-static">
+          <div class="note-section-title">The static Keyword</div>
+
+          <div class="note-card">
+            <div class="note-card-title">Belonging to the Class <span class="badge badge-covered">Covered</span></div>
+            <div class="note-body">
+              <p>The <code>static</code> keyword in Java means that the particular member belongs to the <strong>type itself</strong>, rather than to an instance of that type.</p>
+              <div class="reallife-box">
+                <div class="rl-label">Real life example</div>
+                <p>If every student in a school has their own ID, that's non-static. But if there's a total count of all students ever enrolled in the school, that belongs to the whole school, not one student. That would be a <code>static</code> variable.</p>
+              </div>
+              <div class="code-block">
+                <pre><span class="keyword">class</span> <span class="type">MathUtils</span> {
+    <span class="comment">// Static method</span>
+    <span class="keyword">public static int</span> <span class="method">square</span>(<span class="type">int</span> number) {
+        <span class="keyword">return</span> number * number;
+    }
+}
+
+<span class="comment">// Calling a static method without creating an object</span>
+<span class="type">int</span> result = MathUtils.<span class="method">square</span>(<span class="number">5</span>);
+System.out.<span class="method">println</span>(result); <span class="comment">// 25</span></pre>
+              </div>
+              <p>A common example of a static method in Java is the <code>public static void main(String[] args)</code> method. It is static because the JVM needs to call it before any objects are created.</p>
+            </div>
+          </div>
+        </div>
+
         <!-- ABSTRACTION -->
         <div class="note-section" id="java-abstraction">
           <div class="note-section-title">Abstraction </div>
@@ -2289,6 +2462,62 @@ myAnimal.<span class="method">sound</span>(); <span class="comment">// Outputs: 
     }
 }</pre>
               </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PACKAGES -->
+        <div class="note-section" id="java-packages">
+          <div class="note-section-title">Packages</div>
+
+          <div class="note-card">
+            <div class="note-card-title">Organizing Your Code <span class="badge badge-covered">Covered</span></div>
+            <div class="note-body">
+              <p>A <strong>package</strong> in Java is used to group related classes. Think of it as a folder in a file directory. We use packages to avoid name conflicts, and to write a better maintainable code.</p>
+              <div class="reallife-box">
+                <div class="rl-label">Real life example</div>
+                <p>Imagine your computer's hard drive. Instead of putting all your photos, documents, and videos into one giant folder, you group them into separate folders like <code>/Pictures</code>, <code>/Documents/Work</code>, and <code>/Videos/Vacation</code>. Packages do the exact same thing for Java classes.</p>
+              </div>
+              <p>Packages are divided into two categories:</p>
+              <ul style="margin-top: 0.5rem; margin-left: 1.5rem; font-size: 0.9rem; margin-bottom: 1rem;">
+                <li style="margin-bottom: 0.25rem;"><strong>Built-in Packages</strong> (packages from the Java API, like <code>java.util</code>, <code>java.io</code>, <code>java.sql</code>)</li>
+                <li><strong>User-defined Packages</strong> (create your own packages to organize your project)</li>
+              </ul>
+              
+              <div class="tip-box">
+                <div class="tip-label">Using Built-in Packages</div>
+                <p>To use a class or a package from the library, you need to use the <code>import</code> keyword.</p>
+              </div>
+              <div class="code-block">
+                <pre><span class="comment">// Import a single class</span>
+<span class="keyword">import</span> java.util.Scanner;
+
+<span class="comment">// Import the whole package (all classes in java.util)</span>
+<span class="keyword">import</span> java.util.*;
+
+<span class="keyword">class</span> <span class="type">Main</span> {
+    <span class="keyword">public static void</span> <span class="method">main</span>(<span class="type">String</span>[] args) {
+        <span class="type">Scanner</span> sc = <span class="keyword">new</span> <span class="type">Scanner</span>(System.in);
+        System.out.<span class="method">println</span>(<span class="string">"Ready!"</span>);
+    }
+}</pre>
+              </div>
+
+              <div class="tip-box">
+                <div class="tip-label">Creating Your Own Packages</div>
+                <p>To create a package, you use the <code>package</code> keyword at the very top of your Java file.</p>
+              </div>
+              <div class="code-block">
+                <pre><span class="comment">// At the top of your file 'MyClass.java'</span>
+<span class="keyword">package</span> mypack;
+
+<span class="keyword">class</span> <span class="type">MyClass</span> {
+    <span class="keyword">public static void</span> <span class="method">main</span>(<span class="type">String</span>[] args) {
+        System.out.<span class="method">println</span>(<span class="string">"This is my package!"</span>);
+    }
+}</pre>
+              </div>
+              <p>When saving the file, you should save it in a directory that matches the package name (e.g., inside a folder named <code>mypack</code>). To compile and run it, you would navigate to the root folder in the terminal and compile with <code>javac mypack/MyClass.java</code>, and then run it with <code>java mypack.MyClass</code>.</p>
             </div>
           </div>
         </div>
