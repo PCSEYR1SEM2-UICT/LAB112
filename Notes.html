@@ -176,21 +176,26 @@
     .mobile-nav {
       display: none;
       position: fixed;
-      top: 64px;
-      left: 0;
+      top: 0;
+      bottom: 0;
       right: 0;
-      background: rgba(10, 22, 40, 0.97);
-      backdrop-filter: blur(20px);
-      border-bottom: 1px solid var(--border);
+      left: auto;
+      width: 65%;
+      background: rgba(10, 22, 40, 0.98);
+      backdrop-filter: blur(25px);
+      border-left: 1px solid var(--border);
       z-index: 99;
-      padding: 1.5rem 2rem;
+      padding: 5rem 1.5rem 2rem;
+      /* Added top padding for the logo/header area */
       flex-direction: column;
-      transform: translateY(-110%);
-      transition: transform 0.3s ease;
+      transform: translateX(100%);
+      transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      overflow-y: auto;
+      box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
     }
 
     .mobile-nav.open {
-      transform: translateY(0);
+      transform: translateX(0);
     }
 
     .mobile-nav a {
@@ -810,8 +815,147 @@
     <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
   </nav>
   <div class="mobile-nav" id="mobile-nav">
-    <a href="HomePage.html">Home</a><a href="Courses.html">Courses</a><a href="Notes.html">Notes</a><a
-      href="PDFs.html">PDFs</a><a href="Calendar.html">Calendar</a><a href="login.html">Login</a>
+    <a href="HomePage.html">Home</a>
+    <a href="Courses.html">Courses</a>
+    <a href="Notes.html" style="color: var(--amber);">Notes</a>
+    <a href="PDFs.html">PDFs</a>
+    <a href="Calendar.html">Calendar</a>
+    <a href="login.html">Login</a>
+
+    <hr style="border: 0; border-top: 1px solid var(--border); margin: 1.5rem 0;">
+
+    <div class="search-wrap" style="margin-bottom: 1.5rem; position: relative;">
+      <i class="bi bi-search"
+        style="position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); color: var(--text-dim);"></i>
+      <input type="text" id="mobile-search" placeholder="Search notes..."
+        style="width: 100%; padding: 0.8rem 1rem 0.8rem 2.5rem; background: var(--card-bg); border: 1px solid var(--border); color: var(--cream); border-radius: 8px; font-family: var(--font-body); font-size: 0.95rem; outline: none; transition: border-color 0.2s;"
+        onfocus="this.style.borderColor='var(--amber)'" onblur="this.style.borderColor='var(--border)'" />
+    </div>
+
+    <!-- C# Topics -->
+    <div
+      style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-dim); margin-bottom: 0.5rem; font-weight: 700;">
+      C# Programming</div>
+    <div style="display: flex; flex-direction: column; margin-bottom: 1.5rem;">
+      <a href="#csharp-variables"
+        style="border: none; padding: 0.6rem 0; font-size: 0.9rem; display: flex; align-items: center; gap: 0.5rem;"><i
+          class="bi bi-hash"></i> Variables</a>
+      <a href="#csharp-display"
+        style="border: none; padding: 0.6rem 0; font-size: 0.9rem; display: flex; align-items: center; gap: 0.5rem;"><i
+          class="bi bi-terminal"></i> Displaying Text</a>
+      <a href="#csharp-comments"
+        style="border: none; padding: 0.6rem 0; font-size: 0.9rem; display: flex; align-items: center; gap: 0.5rem;"><i
+          class="bi bi-chat-left-text"></i> Comments</a>
+      <a href="#csharp-escape"
+        style="border: none; padding: 0.6rem 0; font-size: 0.9rem; display: flex; align-items: center; gap: 0.5rem;"><i
+          class="bi bi-backslash"></i> Escape Sequences</a>
+      <a href="#csharp-arrays"
+        style="border: none; padding: 0.6rem 0; font-size: 0.9rem; display: flex; align-items: center; gap: 0.5rem;"><i
+          class="bi bi-grid-3x3"></i> Arrays</a>
+      <a href="#csharp-loops"
+        style="border: none; padding: 0.6rem 0; font-size: 0.9rem; display: flex; align-items: center; gap: 0.5rem;"><i
+          class="bi bi-arrow-repeat"></i> Loops</a>
+      <a href="#csharp-methods"
+        style="border: none; padding: 0.6rem 0; font-size: 0.9rem; display: flex; align-items: center; gap: 0.5rem;"><i
+          class="bi bi-braces"></i> Methods</a>
+      <a href="#csharp-classes"
+        style="border: none; padding: 0.6rem 0; font-size: 0.9rem; display: flex; align-items: center; gap: 0.5rem;"><i
+          class="bi bi-boxes"></i> Classes &amp; Objects</a>
+      <a href="#csharp-access"
+        style="border: none; padding: 0.6rem 0; font-size: 0.9rem; display: flex; align-items: center; gap: 0.5rem;"><i
+          class="bi bi-shield-lock"></i> Access Modifiers</a>
+      <a href="#csharp-inheritance"
+        style="border: none; padding: 0.6rem 0; font-size: 0.9rem; display: flex; align-items: center; gap: 0.5rem;"><i
+          class="bi bi-diagram-2"></i> Inheritance</a>
+      <a href="#csharp-constructors"
+        style="border: none; padding: 0.6rem 0; font-size: 0.9rem; display: flex; align-items: center; gap: 0.5rem;"><i
+          class="bi bi-gear"></i> Constructors</a>
+      <a href="#csharp-encapsulation"
+        style="border: none; padding: 0.6rem 0; font-size: 0.9rem; display: flex; align-items: center; gap: 0.5rem;"><i
+          class="bi bi-lock"></i> Encapsulation</a>
+      <a href="#csharp-getset"
+        style="border: none; padding: 0.6rem 0; font-size: 0.9rem; display: flex; align-items: center; gap: 0.5rem;"><i
+          class="bi bi-arrow-left-right"></i> Getters &amp; Setters</a>
+      <a href="#csharp-void"
+        style="border: none; padding: 0.6rem 0; font-size: 0.9rem; display: flex; align-items: center; gap: 0.5rem;"><i
+          class="bi bi-x-circle"></i> Void Keyword</a>
+      <a href="#csharp-polymorphism"
+        style="border: none; padding: 0.6rem 0; font-size: 0.9rem; display: flex; align-items: center; gap: 0.5rem;"><i
+          class="bi bi-layers"></i> Polymorphism</a>
+      <a href="#csharp-overloading"
+        style="border: none; padding: 0.6rem 0; font-size: 0.9rem; display: flex; align-items: center; gap: 0.5rem;"><i
+          class="bi bi-distribute-vertical"></i> Overloading vs Overriding</a>
+      <a href="#csharp-static"
+        style="border: none; padding: 0.6rem 0; font-size: 0.9rem; display: flex; align-items: center; gap: 0.5rem;"><i
+          class="bi bi-lightning"></i> Static Keyword</a>
+      <a href="#csharp-abstraction"
+        style="border: none; padding: 0.6rem 0; font-size: 0.9rem; display: flex; align-items: center; gap: 0.5rem;"><i
+          class="bi bi-eye-slash"></i> Abstraction</a>
+      <a href="#csharp-interfaces"
+        style="border: none; padding: 0.6rem 0; font-size: 0.9rem; display: flex; align-items: center; gap: 0.5rem;"><i
+          class="bi bi-plug"></i> Interfaces</a>
+    </div>
+
+    <!-- Java Topics -->
+    <div
+      style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-dim); margin-bottom: 0.5rem; font-weight: 700;">
+      Java Programming</div>
+    <div style="display: flex; flex-direction: column; margin-bottom: 1.5rem;">
+      <a href="#java-intro"
+        style="border: none; padding: 0.6rem 0; font-size: 0.9rem; display: flex; align-items: center; gap: 0.5rem;"><i
+          class="bi bi-cpu"></i> Introduction</a>
+      <a href="#java-fundamentals"
+        style="border: none; padding: 0.6rem 0; font-size: 0.9rem; display: flex; align-items: center; gap: 0.5rem;"><i
+          class="bi bi-code"></i> Fundamentals</a>
+      <a href="#java-input"
+        style="border: none; padding: 0.6rem 0; font-size: 0.9rem; display: flex; align-items: center; gap: 0.5rem;"><i
+          class="bi bi-keyboard"></i> User Input</a>
+      <a href="#java-loops"
+        style="border: none; padding: 0.6rem 0; font-size: 0.9rem; display: flex; align-items: center; gap: 0.5rem;"><i
+          class="bi bi-arrow-repeat"></i> Loops</a>
+      <a href="#java-arrays"
+        style="border: none; padding: 0.6rem 0; font-size: 0.9rem; display: flex; align-items: center; gap: 0.5rem;"><i
+          class="bi bi-grid-3x3"></i> Arrays</a>
+      <a href="#java-oop"
+        style="border: none; padding: 0.6rem 0; font-size: 0.9rem; display: flex; align-items: center; gap: 0.5rem;"><i
+          class="bi bi-boxes"></i> Classes &amp; Objects</a>
+      <a href="#java-constructors"
+        style="border: none; padding: 0.6rem 0; font-size: 0.9rem; display: flex; align-items: center; gap: 0.5rem;"><i
+          class="bi bi-gear"></i> Constructors</a>
+      <a href="#java-inheritance"
+        style="border: none; padding: 0.6rem 0; font-size: 0.9rem; display: flex; align-items: center; gap: 0.5rem;"><i
+          class="bi bi-diagram-2"></i> Inheritance</a>
+      <a href="#java-encapsulation"
+        style="border: none; padding: 0.6rem 0; font-size: 0.9rem; display: flex; align-items: center; gap: 0.5rem;"><i
+          class="bi bi-lock"></i> Encapsulation</a>
+      <a href="#java-polymorphism"
+        style="border: none; padding: 0.6rem 0; font-size: 0.9rem; display: flex; align-items: center; gap: 0.5rem;"><i
+          class="bi bi-layers"></i> Polymorphism</a>
+      <a href="#java-overloading"
+        style="border: none; padding: 0.6rem 0; font-size: 0.9rem; display: flex; align-items: center; gap: 0.5rem;"><i
+          class="bi bi-distribute-vertical"></i> Overloading vs Overriding</a>
+      <a href="#java-static"
+        style="border: none; padding: 0.6rem 0; font-size: 0.9rem; display: flex; align-items: center; gap: 0.5rem;"><i
+          class="bi bi-lightning"></i> Static Keyword</a>
+      <a href="#java-abstraction"
+        style="border: none; padding: 0.6rem 0; font-size: 0.9rem; display: flex; align-items: center; gap: 0.5rem;"><i
+          class="bi bi-eye-slash"></i> Abstraction</a>
+      <a href="#java-interfaces"
+        style="border: none; padding: 0.6rem 0; font-size: 0.9rem; display: flex; align-items: center; gap: 0.5rem;"><i
+          class="bi bi-plug"></i> Interfaces</a>
+      <a href="#java-packages"
+        style="border: none; padding: 0.6rem 0; font-size: 0.9rem; display: flex; align-items: center; gap: 0.5rem;"><i
+          class="bi bi-box-seam"></i> Packages</a>
+      <a href="#java-exceptions"
+        style="border: none; padding: 0.6rem 0; font-size: 0.9rem; display: flex; align-items: center; gap: 0.5rem;"><i
+          class="bi bi-exclamation-triangle"></i> Exceptions</a>
+      <a href="#java-io"
+        style="border: none; padding: 0.6rem 0; font-size: 0.9rem; display: flex; align-items: center; gap: 0.5rem;"><i
+          class="bi bi-file-earmark-text"></i> I/O Streams</a>
+      <a href="#java-database"
+        style="border: none; padding: 0.6rem 0; font-size: 0.9rem; display: flex; align-items: center; gap: 0.5rem;"><i
+          class="bi bi-database"></i> Database</a>
+    </div>
   </div>
 
   <div class="page-wrap">
@@ -871,6 +1015,87 @@
       <h1 class="page-title">Course <span>Notes</span></h1>
       <p class="page-sub">Clear, simple notes for every topic. Topics marked are coming up in
         class — read ahead and get a head start!</p>
+
+      <style>
+        .quick-jump-links {
+          display: flex;
+          gap: 1rem;
+          margin-top: 2rem;
+          margin-bottom: 1.5rem;
+        }
+
+        .quick-jump-btn {
+          flex: 1;
+          text-align: center;
+          background: rgba(var(--planetary-rgb), 0.3);
+          color: var(--cream);
+          padding: 1rem;
+          border-radius: 8px;
+          text-decoration: none;
+          border: 1px solid var(--border);
+          transition: all 0.3s ease;
+          font-weight: 600;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 0.5rem;
+        }
+
+        .quick-jump-btn:hover {
+          background: var(--planetary);
+          color: var(--white);
+          border-color: var(--amber);
+          transform: translateY(-2px);
+          box-shadow: 0 4px 12px rgba(var(--planetary-rgb), 0.5);
+        }
+
+        .quick-jump-btn i {
+          color: var(--amber);
+          font-size: 1.2rem;
+        }
+
+        /* Mobile Fixed Bottom Bar */
+        @media (max-width: 600px) {
+          .quick-jump-links {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: 0;
+            padding: 0.8rem 1rem;
+            background: rgba(var(--galaxy-rgb), 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-top: 1px solid var(--border);
+            z-index: 1000;
+            flex-direction: row;
+            gap: 0.5rem;
+            box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.4);
+          }
+
+          .quick-jump-btn {
+            padding: 0.8rem 0.5rem;
+            font-size: 0.85rem;
+          }
+
+          .quick-jump-btn i {
+            font-size: 1.1rem;
+          }
+
+          body {
+            padding-bottom: 80px;
+            /* Prevent content from hiding behind the fixed bar */
+          }
+        }
+      </style>
+      <div class="quick-jump-links">
+        <a href="#csharp" class="quick-jump-btn">
+          <i class="bi bi-braces-asterisk"></i> C# Programming
+        </a>
+        <a href="#java" class="quick-jump-btn">
+          <i class="bi bi-cup-hot"></i> Java Programming
+        </a>
+      </div>
 
       <div class="search-wrap">
         <i class="bi bi-search"></i>
@@ -1740,12 +1965,17 @@ Console.<span class="method">WriteLine</span>(result); <span class="comment">// 
           <div class="note-card">
             <div class="note-card-title">Method Overloading <span class="badge badge-ahead">Read Ahead</span></div>
             <div class="note-body">
-              <p><strong>Overloading</strong> occurs when multiple methods in the <em>same class</em> share the <em>same name</em>, but have <em>different parameters</em> (either a different number of parameters or different data types).</p>
+              <p><strong>Overloading</strong> occurs when multiple methods in the <em>same class</em> share the <em>same
+                  name</em>, but have <em>different parameters</em> (either a different number of parameters or
+                different data types).</p>
               <div class="reallife-box">
                 <div class="rl-label">Real life example</div>
-                <p>Think of the word <strong>"Draw"</strong>. You can "Draw" (a picture with a pencil), or you can "Draw" (a sword from its sheath). It's the exact same word, but because you gave it different "inputs" (pencil vs sword), it does completely different things.</p>
+                <p>Think of the word <strong>"Draw"</strong>. You can "Draw" (a picture with a pencil), or you can
+                  "Draw" (a sword from its sheath). It's the exact same word, but because you gave it different "inputs"
+                  (pencil vs sword), it does completely different things.</p>
               </div>
-              <p>Method overloading is an example of <strong>Compile-Time Polymorphism</strong> because the compiler decides which method to run based on the arguments you pass when writing the code.</p>
+              <p>Method overloading is an example of <strong>Compile-Time Polymorphism</strong> because the compiler
+                decides which method to run based on the arguments you pass when writing the code.</p>
               <div class="code-block">
                 <pre><span class="keyword">class</span> <span class="type">Calculator</span>
 {
@@ -1786,12 +2016,20 @@ Console.<span class="method">WriteLine</span>(result); <span class="comment">// 
           <div class="note-card">
             <div class="note-card-title">Method Overriding <span class="badge badge-ahead">Read Ahead</span></div>
             <div class="note-body">
-              <p><strong>Overriding</strong> occurs when a <em>child class</em> provides a specific, customized implementation for a method that is already provided by its <em>parent class</em>.</p>
+              <p><strong>Overriding</strong> occurs when a <em>child class</em> provides a specific, customized
+                implementation for a method that is already provided by its <em>parent class</em>.</p>
               <div class="reallife-box">
                 <div class="rl-label">Real life example</div>
-                <p>Imagine a general <strong>Vehicle</strong> blueprint that says all vehicles must <strong>"StartEngine"</strong>. A car might start its engine with a key, while a modern sports car might start with a push-button. The sports car takes the general "StartEngine" command and overrides it with its own custom way of doing things.</p>
+                <p>Imagine a general <strong>Vehicle</strong> blueprint that says all vehicles must
+                  <strong>"StartEngine"</strong>. A car might start its engine with a key, while a modern sports car
+                  might start with a push-button. The sports car takes the general "StartEngine" command and overrides
+                  it with its own custom way of doing things.
+                </p>
               </div>
-              <p>In C#, for a method to be overridden, the parent's method must be marked with the <code>virtual</code> keyword, and the child's method must use the <code>override</code> keyword. This is an example of <strong>Run-Time Polymorphism</strong>.</p>
+              <p>In C#, for a method to be overridden, the parent's method must be marked with the <code>virtual</code>
+                keyword, and the child's method must use the <code>override</code> keyword. This is an example of
+                <strong>Run-Time Polymorphism</strong>.
+              </p>
               <div class="code-block">
                 <pre><span class="keyword">class</span> <span class="type">Employee</span>
 {
@@ -1836,22 +2074,27 @@ Console.<span class="method">WriteLine</span>(result); <span class="comment">// 
 
           <!-- COMPARISON CARD -->
           <div class="note-card">
-            <div class="note-card-title">Comparing Overloading vs Overriding <span class="badge badge-ahead">Summary</span></div>
+            <div class="note-card-title">Comparing Overloading vs Overriding <span
+                class="badge badge-ahead">Summary</span></div>
             <div class="note-body">
               <div class="compare-wrap">
                 <div class="compare-block">
                   <div class="compare-label good">Method Overloading</div>
-                  <ul style="margin-top: 0.75rem; margin-left: 1rem; font-size: 0.85rem; color: var(--text-dim); line-height: 1.6;">
+                  <ul
+                    style="margin-top: 0.75rem; margin-left: 1rem; font-size: 0.85rem; color: var(--text-dim); line-height: 1.6;">
                     <li>Occurs within the <strong>same class</strong>.</li>
                     <li>Methods must have the <strong>same name</strong> but <strong>different parameters</strong>.</li>
-                    <li>Used to increase the readability of the program (doing the same logic with different data types).</li>
+                    <li>Used to increase the readability of the program (doing the same logic with different data
+                      types).</li>
                     <li>Known as <strong>Compile-Time</strong> Polymorphism.</li>
                     <li>Does not require special keywords like <code>virtual</code> or <code>override</code>.</li>
                   </ul>
                 </div>
                 <div class="compare-block">
-                  <div class="compare-label good" style="background: rgba(240, 165, 0, 0.15); color: var(--amber);">Method Overriding</div>
-                  <ul style="margin-top: 0.75rem; margin-left: 1rem; font-size: 0.85rem; color: var(--text-dim); line-height: 1.6;">
+                  <div class="compare-label good" style="background: rgba(240, 165, 0, 0.15); color: var(--amber);">
+                    Method Overriding</div>
+                  <ul
+                    style="margin-top: 0.75rem; margin-left: 1rem; font-size: 0.85rem; color: var(--text-dim); line-height: 1.6;">
                     <li>Occurs between <strong>parent and child classes</strong> (Inheritance).</li>
                     <li>Methods must have the <strong>exact same name and parameters</strong>.</li>
                     <li>Used to provide a specific, customized implementation for an inherited method.</li>
@@ -1869,12 +2112,17 @@ Console.<span class="method">WriteLine</span>(result); <span class="comment">// 
           <div class="note-section-title">The static Keyword</div>
 
           <div class="note-card">
-            <div class="note-card-title">Belonging to the Class, Not the Object <span class="badge badge-ahead">Read Ahead</span></div>
+            <div class="note-card-title">Belonging to the Class, Not the Object <span class="badge badge-ahead">Read
+                Ahead</span></div>
             <div class="note-body">
-              <p>When a method or variable is marked as <code>static</code>, it belongs to the <strong>class itself</strong>, rather than any specific object created from that class.</p>
+              <p>When a method or variable is marked as <code>static</code>, it belongs to the <strong>class
+                  itself</strong>, rather than any specific object created from that class.</p>
               <div class="reallife-box">
                 <div class="rl-label">Real life example</div>
-                <p>If you have a <code>Student</code> class, the <code>Name</code> and <code>Age</code> variables belong to each individual student object. But a variable like <code>TotalStudentsEnrolled</code> should be shared across everyone. It belongs to the concept of the Student class, not one person. That's a static variable.</p>
+                <p>If you have a <code>Student</code> class, the <code>Name</code> and <code>Age</code> variables belong
+                  to each individual student object. But a variable like <code>TotalStudentsEnrolled</code> should be
+                  shared across everyone. It belongs to the concept of the Student class, not one person. That's a
+                  static variable.</p>
               </div>
               <div class="code-block">
                 <pre><span class="keyword">class</span> <span class="type">MathUtils</span>
@@ -1891,7 +2139,8 @@ Console.<span class="method">WriteLine</span>(result); <span class="comment">// 
 <span class="type">int</span> result = MathUtils.<span class="method">Square</span>(<span class="number">5</span>);
 Console.<span class="method">WriteLine</span>(result); <span class="comment">// 25</span></pre>
               </div>
-              <p>A static method cannot access non-static variables directly because it doesn't know which object's variables to look at.</p>
+              <p>A static method cannot access non-static variables directly because it doesn't know which object's
+                variables to look at.</p>
             </div>
           </div>
         </div>
@@ -2145,7 +2394,8 @@ Console.<span class="method">WriteLine</span>(c.<span class="method">GetArea</sp
           <div class="note-card">
             <div class="note-card-title">Repeating Actions <span class="badge badge-covered">Covered</span></div>
             <div class="note-body">
-              <p>Control flow structures allow your program to make decisions (<code>if-else</code>) or repeat actions (<code>for</code> and <code>while</code> loops).</p>
+              <p>Control flow structures allow your program to make decisions (<code>if-else</code>) or repeat actions
+                (<code>for</code> and <code>while</code> loops).</p>
               <div class="code-block">
                 <pre><span class="comment">// If-Else Statement</span>
 <span class="type">int</span> score = <span class="number">85</span>;
@@ -2356,6 +2606,120 @@ myAnimal.<span class="method">sound</span>(); <span class="comment">// Outputs: 
           </div>
         </div>
 
+        <!-- OVERLOADING VS OVERRIDING -->
+        <div class="note-section" id="java-overloading">
+          <div class="note-section-title">Method Overloading &amp; Overriding</div>
+
+          <!-- OVERLOADING CARD -->
+          <div class="note-card">
+            <div class="note-card-title">Method Overloading <span class="badge badge-ahead">Read Ahead</span></div>
+            <div class="note-body">
+              <p><strong>Overloading</strong> occurs when multiple methods in the <em>same class</em> share the <em>same
+                  name</em> but have <em>different parameters</em> (different type, number, or order of parameters).</p>
+              <div class="reallife-box">
+                <div class="rl-label">Real life example</div>
+                <p>A <strong>multitool pocket knife</strong>. It has one name ("pocket knife"), but depending on what
+                  you need (what parameters you pass), you pull out a different tool (a blade, a screwdriver, a bottle
+                  opener). The action changes based on what you ask it to do.</p>
+              </div>
+              <p>Method overloading is an example of <strong>Compile-Time Polymorphism</strong> because the compiler
+                knows exactly which method to call based on the arguments provided when you write the code.</p>
+              <div class="code-block">
+                <pre><span class="keyword">class</span> <span class="type">MathOperations</span> {
+    <span class="comment">// 1. Basic method: Add two integers</span>
+    <span class="keyword">public int</span> <span class="method">add</span>(<span class="type">int</span> a, <span class="type">int</span> b) {
+        <span class="keyword">return</span> a + b;
+    }
+
+    <span class="comment">// 2. Overloaded method: Same name 'add', but three int parameters</span>
+    <span class="keyword">public int</span> <span class="method">add</span>(<span class="type">int</span> a, <span class="type">int</span> b, <span class="type">int</span> c) {
+        <span class="keyword">return</span> a + b + c;
+    }
+
+    <span class="comment">// 3. Overloaded method: Same name 'add', but double parameters</span>
+    <span class="keyword">public double</span> <span class="method">add</span>(<span class="type">double</span> a, <span class="type">double</span> b) {
+        <span class="keyword">return</span> a + b;
+    }
+}</pre>
+              </div>
+            </div>
+          </div>
+
+          <!-- OVERRIDING CARD -->
+          <div class="note-card" style="margin-top: 1.5rem;">
+            <div class="note-card-title">Method Overriding <span class="badge badge-ahead">Read Ahead</span></div>
+            <div class="note-body">
+              <p><strong>Overriding</strong> happens when a child class (subclass) provides its own specific
+                implementation for a method that is already defined in its parent class (superclass).</p>
+              <div class="reallife-box">
+                <div class="rl-label">Real life example</div>
+                <p>A family recipe. Your grandmother has a recipe for <strong>bakeCake()</strong>. You inherit that
+                  recipe, but you decide to add chocolate chips. You are <strong>overriding</strong> her recipe with
+                  your own version. It's still called baking a cake, but the implementation has changed.</p>
+              </div>
+              <p>Method overriding is an example of <strong>Run-Time Polymorphism</strong>. The program decides which
+                version of the method to run while the program is actually executing, based on the actual object
+                created.</p>
+              <div class="code-block">
+                <pre><span class="keyword">class</span> <span class="type">Animal</span> {
+    <span class="comment">// Method to be overridden</span>
+    <span class="keyword">public void</span> <span class="method">speak</span>() {
+        System.out.<span class="method">println</span>(<span class="string">"Animal makes a sound"</span>);
+    }
+}
+
+<span class="keyword">class</span> <span class="type">Dog</span> <span class="keyword">extends</span> <span class="type">Animal</span> {
+    <span class="comment">// Use '@Override' annotation in Java to indicate overriding</span>
+    <span class="keyword">@Override</span>
+    <span class="keyword">public void</span> <span class="method">speak</span>() {
+        System.out.<span class="method">println</span>(<span class="string">"Dog barks: Woof!"</span>);
+    }
+}</pre>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- STATIC KEYWORD -->
+        <div class="note-section" id="java-static">
+          <div class="note-section-title">Static Keyword</div>
+
+          <div class="note-card">
+            <div class="note-card-title">Shared Belonging <span class="badge badge-ahead">Read Ahead</span></div>
+            <div class="note-body">
+              <p>The <code>static</code> keyword means that a member (variable or method) belongs to the <strong>class
+                  itself</strong>, rather than to any specific <em>object</em> (instance) created from that class.</p>
+              <div class="reallife-box">
+                <div class="rl-label">Real life example</div>
+                <p>Think of an office building. Every employee has their own personal desk (instance variables). But
+                  the <strong>office coffee machine</strong> is shared by everyone. It belongs to the office itself, not
+                  to any one employee. That coffee machine is <code>static</code>.</p>
+              </div>
+              <ul class="styled-list">
+                <li><strong>Static Variables:</strong> Only one copy exists in memory. If one object changes it, all
+                  objects see the change.</li>
+                <li><strong>Static Methods:</strong> You can call them without creating an object first (e.g.,
+                  <code>Math.round()</code>).
+                </li>
+              </ul>
+              <div class="code-block">
+                <pre><span class="keyword">class</span> <span class="type">Student</span> {
+    <span class="keyword">public</span> <span class="type">String</span> name; <span class="comment">// Instance variable (belongs to object)</span>
+    <span class="keyword">public static int</span> studentCount = <span class="number">0</span>; <span class="comment">// Static variable (belongs to class)</span>
+
+    <span class="keyword">public</span> <span class="method">Student</span>(<span class="type">String</span> studentName) {
+        name = studentName;
+        studentCount++; <span class="comment">// Increases every time ANY student is created</span>
+    }
+}
+
+<span class="comment">// Accessing without creating a new Student object!</span>
+System.out.<span class="method">println</span>(Student.studentCount);</pre>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <!-- ABSTRACTION -->
         <div class="note-section" id="java-abstraction">
           <div class="note-section-title">Abstraction </div>
@@ -2524,18 +2888,38 @@ myAnimal.<span class="method">sound</span>(); <span class="comment">// Outputs: 
     hamburger.addEventListener('click', () => { hamburger.classList.toggle('open'); mobileNav.classList.toggle('open'); });
     document.addEventListener('click', (e) => { if (!hamburger.contains(e.target) && !mobileNav.contains(e.target)) { hamburger.classList.remove('open'); mobileNav.classList.remove('open'); } });
 
+    // Auto-close mobile nav on link click
+    mobileNav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('open');
+        mobileNav.classList.remove('open');
+      });
+    });
+
     // Search
     const searchInput = document.getElementById('search');
-    searchInput.addEventListener('input', () => {
-      const q = searchInput.value.toLowerCase();
+    const mobileSearchInput = document.getElementById('mobile-search');
+
+    const performSearch = (q) => {
       document.querySelectorAll('.note-card').forEach(card => {
-        const section = card.closest('.note-section');
         card.style.display = card.textContent.toLowerCase().includes(q) ? '' : 'none';
       });
       document.querySelectorAll('.note-section').forEach(section => {
         const visible = [...section.querySelectorAll('.note-card')].some(c => c.style.display !== 'none');
         section.style.display = (q === '' || visible) ? '' : 'none';
       });
+    };
+
+    searchInput.addEventListener('input', () => {
+      const q = searchInput.value.toLowerCase();
+      mobileSearchInput.value = searchInput.value; // Sync
+      performSearch(q);
+    });
+
+    mobileSearchInput.addEventListener('input', () => {
+      const q = mobileSearchInput.value.toLowerCase();
+      searchInput.value = mobileSearchInput.value; // Sync
+      performSearch(q);
     });
 
     // Sidebar active link on scroll
